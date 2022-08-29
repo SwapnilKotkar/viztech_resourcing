@@ -20,7 +20,9 @@ const AdminInfo = ({ tokenValue }) => {
 
   const handleUpdateSubmit = async (e) => {
     e.preventDefault();
+
     const { firstName, lastName, email } = updateInfo;
+
     const res = await fetch("/api/updateadmin", {
       method: "PUT",
       headers: {
@@ -28,6 +30,7 @@ const AdminInfo = ({ tokenValue }) => {
       },
       body: JSON.stringify({ token, firstName, lastName, email }),
     });
+
     if (res.status === 200) {
       toast.success("updated successfully!");
     } else {
@@ -36,93 +39,117 @@ const AdminInfo = ({ tokenValue }) => {
   };
 
   return (
-    <div className="py-2 bg-gray-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mt-10 sm:mt-0 py-8">
-          <div className="md:grid md:grid-cols-3 md:gap-6">
-            <div className="md:col-span-1">
-              <div className="px-4 sm:px-0">
-                <h3 className="text-lg font-medium leading-6 text-gray-900">
-                  Admin Information
-                </h3>
+    <>
+  
+    <section className="bg-gray-100">
+      <div className="max-w-screen-xl px-4 py-12 mx-auto sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 gap-y-8 ">
+          <div className="py-4 lg:py-0 lg:col-span-2">
+
+            <div className="flex justify-center">
+              <a href="" className="text-2xl font-bold text-gray-900">
+                Update admin information
+              </a>
+            </div>
+          </div>
+
+          <div className="p-8 bg-white rounded-lg shadow-lg lg:p-12 lg:col-span-3">
+            <form method="POST" onSubmit={handleUpdateSubmit} className="space-y-4">
+              <div>
+                <label className="sr-only" htmlFor="name">
+                  Your full name
+                </label>
+                <input
+                  className="w-full p-3 text-sm border-gray-200 rounded-lg"
+                  placeholder="Your full name"
+                  type="text"
+                  id="name"
+                  name="firstName"
+                  value={updateInfo.firstName}
+                  onChange={handleInfoChange}
+                  required
+                />
               </div>
-            </div>
-            <div className="mt-5 md:mt-0 md:col-span-2">
-              <form onSubmit={handleUpdateSubmit} method="POST">
-                <div className="shadow overflow-hidden sm:rounded-md">
-                  <div className="px-4 py-5 bg-white sm:p-6">
-                    <div className="grid grid-cols-6 gap-6">
-                      <div className="col-span-6 sm:col-span-3">
-                        <label
-                          htmlFor="firstName"
-                          className="block text-sm font-medium text-gray-700"
-                        >
-                          First name
-                        </label>
-                        <input
-                          type="text"
-                          name="firstName"
-                          id="firstName"
-                          autoComplete="given-name"
-                          value={updateInfo.firstName}
-                          className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                          onChange={handleInfoChange}
-                        />
-                      </div>
 
-                      <div className="col-span-6 sm:col-span-3">
-                        <label
-                          htmlFor="lastName"
-                          className="block text-sm font-medium text-gray-700"
-                        >
-                          Last name
-                        </label>
-                        <input
-                          type="text"
-                          name="lastName"
-                          id="lastName"
-                          autoComplete="family-name"
-                          value={updateInfo.lastName}
-                          className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                          onChange={handleInfoChange}
-                        />
-                      </div>
-
-                      <div className="col-span-6 sm:col-span-4">
-                        <label
-                          htmlFor="email"
-                          className="block text-sm font-medium text-gray-700"
-                        >
-                          Email address
-                        </label>
-                        <input
-                          type="text"
-                          name="email"
-                          id="email"
-                          autoComplete="email"
-                          value={updateInfo.email}
-                          className="italic mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md bg-gray-100 cursor-not-allowed"
-                          onChange={handleInfoChange}
-                          disabled
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
-                    <button
-                      type="submit"
-                      className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                    >
-                      Update info
-                    </button>
-                  </div>
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                <div>
+                <label className="sr-only" htmlFor="firstname">
+                  first name
+                </label>
+                <input
+                  className="w-full p-3 text-sm border-gray-200 rounded-lg"
+                  placeholder="Your full name"
+                  type="text"
+                  id="name"
+                  name="firstName"
+                  value={updateInfo.firstName}
+                  onChange={handleInfoChange}
+                  required
+                />
                 </div>
-              </form>
-            </div>
+
+                <div>
+                <label className="sr-only" htmlFor="lastname">
+                  last name
+                </label>
+                <input
+                  className="w-full p-3 text-sm border-gray-200 rounded-lg"
+                  placeholder="Your full name"
+                  type="text"
+                  id="name"
+                  name="lastName"
+                  value={updateInfo.lastName}
+                  onChange={handleInfoChange}
+                  required
+                />
+                </div>
+              </div>
+              <div>
+              </div>
+              <div>
+                <label className="sr-only" htmlFor="email">
+                  Email
+                </label>
+                <input
+                  className="w-full p-3 text-sm border-gray-200 rounded-lg"
+                  placeholder="email"
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={updateInfo.email}
+                  onChange={handleInfoChange}
+                  disabled
+                />
+              </div>
+              <div className="mt-4">
+                <button
+                  type="submit"
+                  className="inline-flex items-center justify-center w-full px-5 py-3 text-white text-sm border bg-gray-900 border-gray-900 rounded hover:bg-transparent hover:text-gray-600 active:text-gray-500 rounded sm:w-auto"
+                >
+                  <span className="font-medium"> Update </span>
+
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-5 h-5 ml-3"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
-    </div>
+    </section>
+    </>
   );
 };
 

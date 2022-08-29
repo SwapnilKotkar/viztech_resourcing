@@ -14,11 +14,11 @@ const Footer = () => {
               <path d="M96 0V47L48 94H0V47L48 0H96Z" />
             </svg>
 
-            Flowrift
+            Viztech resourcing
           </a>
         </div>
 
-        <p className="text-gray-400 sm:pr-8 mb-6">Filler text is dummy text which has no meaning however looks very similar to real text.</p>
+        <p className="text-gray-400 sm:pr-8 mb-6">You Make The Hire. We Make It Simple.</p>
 
         <div className="flex gap-4">
           <a href="#" target="_blank" className="text-gray-400 hover:text-gray-500 active:text-gray-600 transition duration-100">
@@ -48,30 +48,26 @@ const Footer = () => {
       </div>
 
       <div>
-        <div className="text-gray-100 font-bold tracking-widest uppercase mb-4">Products</div>
+        <div className="text-gray-100 font-bold tracking-widest uppercase mb-4">Menu</div>
 
         <nav className="flex flex-col gap-4">
           <div>
-            <a href="#" className="text-gray-400 hover:text-indigo-500 active:text-indigo-600 transition duration-100">Overview</a>
+            <a href="#" className="text-gray-400 hover:text-indigo-500 active:text-indigo-600 transition duration-100">Home</a>
           </div>
 
           <div>
-            <a href="#" className="text-gray-400 hover:text-indigo-500 active:text-indigo-600 transition duration-100">Solutions</a>
+            <a href="#" className="text-gray-400 hover:text-indigo-500 active:text-indigo-600 transition duration-100">About Us</a>
           </div>
 
           <div>
-            <a href="#" className="text-gray-400 hover:text-indigo-500 active:text-indigo-600 transition duration-100">Pricing</a>
-          </div>
-
-          <div>
-            <a href="#" className="text-gray-400 hover:text-indigo-500 active:text-indigo-600 transition duration-100">Customers</a>
+            <a href="#" className="text-gray-400 hover:text-indigo-500 active:text-indigo-600 transition duration-100">Apply Now</a>
           </div>
         </nav>
       </div>
     
 
       <div>
-        <div className="text-gray-100 font-bold tracking-widest uppercase mb-4">Company</div>
+        <div className="text-gray-100 font-bold tracking-widest uppercase mb-4">Address</div>
 
         <nav className="flex flex-col gap-4">
           <div>
@@ -140,7 +136,7 @@ const Footer = () => {
     
     </div>
 
-    <div className="text-gray-400 text-sm text-center border-t border-gray-800 py-8">© 2021 - Present Flowrift. All rights reserved.</div>
+    <div className="text-gray-400 text-sm text-center border-t border-gray-800 py-8">© Vzitech resourcing. All rights reserved.</div>
   </footer>
 </div>
 </div>
