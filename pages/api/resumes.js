@@ -6,20 +6,21 @@ const Resume = require("../../models/resumeSchema")
 const handler = nc(config);
 
 handler.post(async(req, res) => {
-    const { fullName, email, mobile, resumeTitle, resumeURL, currJobTitle, qual, country } = req.body
+    const { fullName, email, mobile, resumeTitle, resumeURL, applyFor, qual, country } = req.body
 
-    if(!fullName|| !email || !mobile || !resumeTitle || !resumeURL || !currJobTitle || !qual || !country) {
+    if(!fullName|| !email || !mobile || !resumeTitle || !resumeURL || !applyFor || !qual || !country) {
         return res.status(422).json({ error: "please fill the data properly !"});
     }
 
     try{
-        const resume = new Resume({fullName, email, mobile, resumeTitle, resumeURL, currJobTitle, qual, country});
+        const resume = new Resume({fullName, email, mobile, resumeTitle, resumeURL, applyFor, qual, country});
         await resume.save()
         res.status(200).json({message : "Resume submitted successfully !"})
 
 
     }catch(err){ 
-        console.log({message : "Failed to submit resume !"});
+        res.status(400).json({message : "Failed to submit resume !"})
+        console.log({err: err});
     }
 
 });
