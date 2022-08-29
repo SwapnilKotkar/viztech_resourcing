@@ -16,7 +16,7 @@ export const LoginContext = ({children}) => {
     const handleLogout = ()=> {
         localStorage.removeItem('signin_token')
         setLoginStatus(false)
-        router.push('/')
+        // router.push('/')
     }
 
 return(
