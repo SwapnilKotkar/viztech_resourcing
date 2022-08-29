@@ -56,7 +56,8 @@ const Navbar = () => {
                   <Link href="/">
                     <a
                       href="#"
-                      className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-gray-900 hover:bg-gray-900"
+                      className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded shadow-sm text-base font-medium text-white bg-gray-900 hover:bg-gray-900"
+                      onClick={handleLogout}
                     >
                       Log out
                     </a>
@@ -67,7 +68,7 @@ const Navbar = () => {
                 <Link href="/signin">
                   <a
                     href="#"
-                    className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-gray-900 hover:bg-gray-900"
+                    className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded shadow-sm text-base font-medium text-white bg-gray-900 hover:bg-gray-900"
                   >
                     Admin Sign in
                   </a>
@@ -114,7 +115,7 @@ const Navbar = () => {
                         Home
                       </a>
                     </Link>
-                    <Link href="/about">
+                    <Link href="/#about">
                       <a className="text-base font-medium text-gray-700 hover:text-gray-900">
                         About Us
                       </a>
@@ -128,12 +129,33 @@ const Navbar = () => {
                 </div>
               </div>
               <div className="py-6 px-5 space-y-6">
-                <div>
-                  <Link href="/signin">
-                    <a className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-gray-900 hover:bg-gray-900">
+              {loginStatus && (
+                <>
+                  <Link href="/admin">
+                    <a className="text-base font-medium text-gray-700 hover:text-gray-900">
+                      Dashboard
+                    </a>
+                  </Link>
+                  <Link href="/">
+                    <a
+                      href="#"
+                      className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded shadow-sm text-base font-medium text-white bg-gray-900 hover:bg-gray-900"
+                      onClick={handleLogout}
+                    >
+                      Log out
+                    </a>
+                  </Link>
+                </>
+              )}
+              {!loginStatus && (
+                <Link href="/signin">
+                    <a className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded shadow-sm text-base font-medium text-white bg-gray-900 hover:bg-gray-900">
                       Admin Sign in
                     </a>
                   </Link>
+              )}
+                <div>
+                  
                 </div>
               </div>
             </div>
