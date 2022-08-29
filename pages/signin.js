@@ -29,10 +29,9 @@ const Signin = () => {
     });
 
     const data = await res.json();
-    console.log("data is", data)
 
     if(res.status === 200) {
-      localStorage.setItem('signin_token', JSON.stringify(data.token))
+      localStorage.setItem('signin_token', data.token) //JSON.stringify(data.token)
       toast.success("login success")
       setInterval(() => {
         router.push('admin')
