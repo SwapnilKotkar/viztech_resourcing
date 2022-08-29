@@ -21,7 +21,7 @@ const resumeSchema = new mongoose.Schema({
         type: String,
         required:true
     },
-    currJobTitle: {
+    applyFor: {
         type: String,
         required:true
     },
