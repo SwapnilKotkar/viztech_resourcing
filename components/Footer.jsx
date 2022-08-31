@@ -1,4 +1,5 @@
 import React from "react";
+import Link from 'next/link'
 
 const Footer = () => {
   return (
@@ -52,15 +53,21 @@ const Footer = () => {
 
         <nav className="flex flex-col gap-4">
           <div>
-            <a href="#" className="text-gray-400 hover:text-indigo-500 active:text-indigo-600 transition duration-100">Home</a>
+          <Link href="/#home">
+            <a className="text-gray-400 hover:text-indigo-500 active:text-indigo-600 transition duration-100">Home</a>
+          </Link>
           </div>
 
           <div>
-            <a href="#" className="text-gray-400 hover:text-indigo-500 active:text-indigo-600 transition duration-100">About Us</a>
+          <Link href="/#about">
+            <a className="text-gray-400 hover:text-indigo-500 active:text-indigo-600 transition duration-100">About Us</a>
+            </Link>
           </div>
 
           <div>
-            <a href="#" className="text-gray-400 hover:text-indigo-500 active:text-indigo-600 transition duration-100">Apply Now</a>
+          <Link href="/apply">
+            <a className="text-gray-400 hover:text-indigo-500 active:text-indigo-600 transition duration-100">Apply Now</a>
+            </Link>
           </div>
         </nav>
       </div>

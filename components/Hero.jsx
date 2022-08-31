@@ -4,7 +4,7 @@ import Link from 'next/link'
 const Hero = () => {
   return (
     <>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6" id='home'>
     <div className="bg-white pb-6 sm:pb-8 lg:pb-12">
   <div className="max-w-screen-2xl py-4 md:px-0 mx-auto">
   <section className="max-w-screen-2xl px-4 md:px-8 mx-auto">

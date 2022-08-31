@@ -16,7 +16,7 @@ const ViewResumes = ({ resumes }) => {
               </a>
             </div>
           </div>
-          {resumes.map((resume) => (
+          {/* {resumes.map((resume) => (
             <div className="w-full pt-4" key={resume._id}>
               <div className="mx-auto w-full rounded bg-white p-2">
                 <Disclosure>
@@ -127,7 +127,7 @@ const ViewResumes = ({ resumes }) => {
                 </Disclosure>
               </div>
             </div>
-          ))}
+          ))} */}
         </div>
       </div>
     </>

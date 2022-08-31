@@ -4,7 +4,7 @@ import ChangePassword from "../components/ChangePassword";
 import ViewResumes from "../components/ViewResumes";
 import { useViewContext } from "../context/viewContext";
 
-export const View = ({tokenValue, resumeData}) => {
+export const View = ({resumeData}) => {
   const {view} = useViewContext();
 
     switch (view) {
