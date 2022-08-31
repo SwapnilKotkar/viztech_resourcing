@@ -209,7 +209,7 @@ const Apply = () => {
                             name="resumeTitle"
                             type="file"
                             className="sr-only"
-                            accept=".pdf"
+                            accept="application/pdf"
                             onChange={handleFileChange}
                             required
                           />
