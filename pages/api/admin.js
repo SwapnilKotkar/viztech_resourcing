@@ -1,19 +1,29 @@
-import connectDB from '../../db/connection'
-import nc from "next-connect";
-import config from "../../middleware/config";
-
 const jwt = require('jsonwebtoken');
 const Admin = require("../../models/adminSchema");
 
-const handler = nc(config);
+const { connectToDatabase } = require('../../lib/mongodb');
+
+export default async function handler(req, res) {
+    switch (req.method) {
+        case 'POST': {
+            return verifyAdmin(req, res);
+        }
+
+        case 'PUT': {
+            return updateAdmin(req, res);
+        }
+    }
+}
 
 
-handler.post(async(req, res) => {
+async function verifyAdmin(req,res){
     const {token} = req.body;
     try{
+        let { db } = await connectToDatabase();
+
         const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY);
 
-        const user = await Admin.findOne({email : decoded.email})
+        const user = await db.collection('admins').findOne({email : decoded.email})
 
         if(user){
             res.status(200).json(user)
@@ -25,12 +35,14 @@ handler.post(async(req, res) => {
     }catch(err){
         res.status(401).json({'Unauthorized': 'No token provided'});
     }
-})
+}
 
-handler.put(async(req, res) => {
+async function updateAdmin(req,res){
     const { firstName, lastName, email } = req.body;
     try{
-        const user = await Admin.findOneAndUpdate({email: email}, {firstName: firstName, lastName: lastName})
+        let { db } = await connectToDatabase();
+
+        const user = await db.collection('admins').findOneAndUpdate({email : email}, {$set: {firstName: firstName, lastName: lastName}})
 
         if(user){
             res.status(200).json(user)
@@ -43,7 +55,4 @@ handler.put(async(req, res) => {
         res.status(401).json({'message': 'Failed to update'});
     }
     
-})
-
-
-export default handler;
+}
