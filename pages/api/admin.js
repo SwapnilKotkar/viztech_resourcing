@@ -10,19 +10,40 @@ const handler = nc(config);
 
 handler.post(async(req, res) => {
     const {token} = req.body;
-    console.log(token)
     try{
         const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY);
-        console.log("token is",decoded)
-        res.status(200).json({'decoded' : decoded})
+
+        const user = await Admin.findOne({email : decoded.email})
+
+        if(user){
+            res.status(200).json(user)
+        }
+        else{
+        res.status(400).json({ 'message' : "user not found" })
+        }
+
     }catch(err){
         res.status(401).json({'Unauthorized': 'No token provided'});
-        console.log(err);
     }
 })
 
+handler.put(async(req, res) => {
+    const { firstName, lastName, email } = req.body;
+    try{
+        const user = await Admin.findOneAndUpdate({email: email}, {firstName: firstName, lastName: lastName})
 
+        if(user){
+            res.status(200).json(user)
+        }
+        else{
+        res.status(400).json({ 'message' : "user not found" })
+        }
 
+    }catch(err){
+        res.status(401).json({'message': 'Failed to update'});
+    }
+    
+})
 
 
 export default handler;
