@@ -18,8 +18,6 @@ const Admin = ({ resumeData }) => {
     }  
   }, [])
 
-
-
   return (
     <>
       <SubMenu/>
@@ -29,18 +27,11 @@ const Admin = ({ resumeData }) => {
 };
 
 
-
-
-{
-  /* p-4 -mb-px border-b border-current text-cyan-500 */
-}
-
 export async function getServerSideProps() {
-  // Fetch data from external API
-  const resuemResponse = await fetch("http://localhost:3000/api/resumes");
-  const resumeData = await resuemResponse.json();
+  // const resuemResponse = await fetch("http://localhost:3000/api/resumes");
+  // const resumeData = await resuemResponse.json();
+  const resumeData = null;
 
-  // Pass data to the page via props
   return { props: { resumeData } };
 }
 
