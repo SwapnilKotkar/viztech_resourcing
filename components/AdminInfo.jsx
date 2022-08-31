@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { useRouter } from "next/router";
-import Link from "next/link";
 import toast from "react-hot-toast";
+import { useLoginContext } from "../context/LoginContext";
 
-const AdminInfo = ({ tokenValue }) => {
-  const router = useRouter();
+
+//{ tokenValue }
+const AdminInfo = () => {
+
+  const { tokenValue } = useLoginContext();
+  
   const [token, setToken] = useState(tokenValue);
 
   const [updateInfo, setUpdateInfo] = useState({
@@ -23,12 +26,12 @@ const AdminInfo = ({ tokenValue }) => {
 
     const { firstName, lastName, email } = updateInfo;
 
-    const res = await fetch("/api/updateadmin", {
+    const res = await fetch("/api/admin", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ token, firstName, lastName, email }),
+      body: JSON.stringify({ firstName, lastName, email }),
     });
 
     if (res.status === 200) {
@@ -37,6 +40,26 @@ const AdminInfo = ({ tokenValue }) => {
       toast.error("update failed!");
     }
   };
+
+  useEffect(() => {
+
+    const getAdmin = async() => {
+      const res = await fetch("/api/admin", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({token}), 
+      });
+  
+      const data = await res.json()
+      setUpdateInfo({...updateInfo, firstName: data.firstName, lastName: data.lastName, email:data.email})  
+    }
+
+    getAdmin();
+
+  }, [])
+  
 
   return (
     <>
@@ -55,22 +78,6 @@ const AdminInfo = ({ tokenValue }) => {
 
           <div className="p-8 bg-white rounded-lg shadow-lg lg:p-12 lg:col-span-3">
             <form method="POST" onSubmit={handleUpdateSubmit} className="space-y-4">
-              <div>
-                <label className="sr-only" htmlFor="name">
-                  Your full name
-                </label>
-                <input
-                  className="w-full p-3 text-sm border-gray-200 rounded-lg"
-                  placeholder="Your full name"
-                  type="text"
-                  id="name"
-                  name="firstName"
-                  value={updateInfo.firstName}
-                  onChange={handleInfoChange}
-                  required
-                />
-              </div>
-
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div>
                 <label className="sr-only" htmlFor="firstname">
@@ -78,9 +85,9 @@ const AdminInfo = ({ tokenValue }) => {
                 </label>
                 <input
                   className="w-full p-3 text-sm border-gray-200 rounded-lg"
-                  placeholder="Your full name"
+                  placeholder="Firstname"
                   type="text"
-                  id="name"
+                  id="firstname"
                   name="firstName"
                   value={updateInfo.firstName}
                   onChange={handleInfoChange}
@@ -90,13 +97,13 @@ const AdminInfo = ({ tokenValue }) => {
 
                 <div>
                 <label className="sr-only" htmlFor="lastname">
-                  last name
+                  Lastname
                 </label>
                 <input
                   className="w-full p-3 text-sm border-gray-200 rounded-lg"
-                  placeholder="Your full name"
+                  placeholder="Lastname"
                   type="text"
-                  id="name"
+                  id="lastname"
                   name="lastName"
                   value={updateInfo.lastName}
                   onChange={handleInfoChange}
@@ -111,8 +118,8 @@ const AdminInfo = ({ tokenValue }) => {
                   Email
                 </label>
                 <input
-                  className="w-full p-3 text-sm border-gray-200 rounded-lg"
-                  placeholder="email"
+                  className="w-full p-3 text-sm border-gray-200 rounded-lg bg-gray-100 cursor-not-allowed"
+                  placeholder="Email address"
                   type="email"
                   id="email"
                   name="email"

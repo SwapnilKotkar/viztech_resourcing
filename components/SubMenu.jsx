@@ -7,6 +7,11 @@ const SubMenu = () => {
   
   const menuItems = [
     {
+      id: "resumesView",
+      name: "View resumes",
+      link: "",
+    },
+    {
       id: "adminInfoView",
       name: "Admin info",
       link: "",
@@ -15,13 +20,9 @@ const SubMenu = () => {
       id: "changePassView",
       name: "change password",
       link: "",
-    },
-    {
-      id: "resumesView",
-      name: "View resumes",
-      link: "",
-    },
+    }
   ];
+  
   return (
     <div className="py-2 border-b border-t">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

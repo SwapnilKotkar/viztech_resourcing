@@ -8,20 +8,6 @@ export const View = ({tokenValue, resumeData}) => {
   const {view} = useViewContext();
 
     switch (view) {
-        case "adminInfoView":
-          return (
-            <>
-              <AdminInfo tokenValue={tokenValue} />
-            </>
-          );
-    
-        case "changePassView":
-          return (
-            <>
-              <ChangePassword tokenValue={tokenValue} />
-            </>
-          );
-    
         case "resumesView":
           return (
             <>
@@ -29,11 +15,28 @@ export const View = ({tokenValue, resumeData}) => {
             </>
           );
     
+        case "changePassView":
+          return (
+            <>
+              <ChangePassword />
+            </>
+          );
+    
+        case "adminInfoView":
+          return (
+            <>
+              <AdminInfo />
+
+            </>
+          );
+    
           default:
           return (
             <>
-              <AdminInfo tokenValue={tokenValue} />
+              <ViewResumes resumes={resumeData} />
             </>
           );
       }
 }
+
+// resumesView
