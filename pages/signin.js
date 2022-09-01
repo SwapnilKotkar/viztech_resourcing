@@ -34,7 +34,9 @@ const Signin = () => {
       localStorage.setItem('signin_token', data.token) //JSON.stringify(data.token)
       toast.success("login success")
       setInterval(() => {
-        router.push('/')
+//         router.push('/')
+//         router.reload()
+        window.lcoation.replace('/')
       }, 2000);
     }else{
       toast.error("login failed")
