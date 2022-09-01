@@ -28,9 +28,8 @@ const Admin = ({ resumeData }) => {
 
 
 export async function getServerSideProps() {
-  // const resuemResponse = await fetch("http://localhost:3000/api/resumes");
-  // const resumeData = await resuemResponse.json();
-  const resumeData = null;
+  const resuemResponse = await fetch("http://localhost:3000/api/resumes");
+  const resumeData = await resuemResponse.json();
 
   return { props: { resumeData } };
 }

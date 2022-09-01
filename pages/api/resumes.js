@@ -12,16 +12,14 @@ export default async function handler(req, res) {
         case 'POST': {
             return postResume(req, res);
         }
-
-        case 'DELETE': {
-            return deleteResume(req, res);
-        }
     }
 }
 
 async function getResumes(req,res){
     try{
-        const resumes = await Resume.find();
+        let { db } = await connectToDatabase();
+
+        const resumes = await db.collection('resumes').find().toArray();
 
         if(resumes){
             res.status(200).json(resumes)   
