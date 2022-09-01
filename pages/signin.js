@@ -34,7 +34,7 @@ const Signin = () => {
       localStorage.setItem('signin_token', data.token) //JSON.stringify(data.token)
       toast.success("login success")
       setInterval(() => {
-        router.push('/admin')
+      window.location.replace('/admin')
       }, 2000);
     }else{
       toast.error("login failed")
@@ -48,7 +48,7 @@ const Signin = () => {
   useEffect( ()=>{
     const token = localStorage.getItem('signin_token')
     if(token){
-      router.push('/admin')
+      window.location.replace('/admin')
     }
 },[])
 
