@@ -5,6 +5,7 @@ import { Disclosure } from "@headlessui/react";
 // import { ChevronUpIcon } from '@heroicons/react/solid'
 
 const ViewResumes = ({ resumes }) => {
+
   return (
     <>
       <div className="pt-3 pb-10 bg-gray-100">
@@ -16,7 +17,7 @@ const ViewResumes = ({ resumes }) => {
               </a>
             </div>
           </div>
-          {resumes.map((resume) => (
+          {resumes?.map((resume) => (
             <div className="w-full pt-4" key={resume._id}>
               <div className="mx-auto w-full rounded bg-white p-2">
                 <Disclosure>
