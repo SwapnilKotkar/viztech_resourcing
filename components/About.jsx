@@ -78,7 +78,7 @@ const About = () => {
             <div>
               <div className="h-64 md:h-auto bg-gray-100 overflow-hidden rounded-lg shadow-lg">
                 <img
-                  src="https://images.unsplash.com/photo-1610465299996-30f240ac2b1c?auto=format&q=75&fit=crop&w=600&h=450"
+                  src="https://images.unsplash.com/photo-1542340916-951bb72c8f74?auto=format&q=75&fit=crop&w=600&h=450"
                   loading="lazy"
                   alt="Photo by Martin Sanchez"
                   className="w-full h-full object-cover object-center"
