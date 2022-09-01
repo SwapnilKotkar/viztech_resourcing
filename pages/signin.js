@@ -36,7 +36,7 @@ const Signin = () => {
       setInterval(() => {
 //         router.push('/')
 //         router.reload()
-        window.lcoation.replace('/')
+        window.location.replace('/')
       }, 2000);
     }else{
       toast.error("login failed")
