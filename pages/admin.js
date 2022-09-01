@@ -17,7 +17,7 @@ const Admin = () => { //{ resumeData }
     }
 
     async function fetchResume() {
-      const resuemResponse = await fetch("http://localhost:3000/api/resumes");
+      const resuemResponse = await fetch("/api/resumes");
       const resumeData = await resuemResponse.json();
       setResumes(resumeData)
     }
