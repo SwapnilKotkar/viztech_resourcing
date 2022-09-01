@@ -35,6 +35,7 @@ const Signin = () => {
       toast.success("login success")
       setInterval(() => {
       window.location.replace('/admin')
+        window.location.replace('/admin')
       }, 2000);
     }else{
       toast.error("login failed")
@@ -49,6 +50,8 @@ const Signin = () => {
     const token = localStorage.getItem('signin_token')
     if(token){
       window.location.replace('/admin')
+     // router.push('/admin')
+      window.location.replace("/admin");
     }
 },[])
 
