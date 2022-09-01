@@ -1,13 +1,9 @@
-// import connectDB from '../../db/connection'
-// import nc from "next-connect";
-// import config from "../../middleware/config";
 const { connectToDatabase } = require('../../lib/mongodb');
 
 const jwt = require('jsonwebtoken');
 const CryptoJS = require("crypto-js");
 const Admin = require("../../models/adminSchema")
 
-// const handler = nc(config);
 
 export default async function handler(req, res) {
     switch (req.method) {

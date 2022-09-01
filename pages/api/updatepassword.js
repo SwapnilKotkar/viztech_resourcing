@@ -2,7 +2,6 @@ const jwt = require('jsonwebtoken');
 const Admin = require("../../models/adminSchema");
 const CryptoJS = require("crypto-js");
 
-
 const { connectToDatabase } = require('../../lib/mongodb');
 
 export default async function handler(req, res) {
