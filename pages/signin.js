@@ -48,7 +48,8 @@ const Signin = () => {
   useEffect( ()=>{
     const token = localStorage.getItem('signin_token')
     if(token){
-      router.push('/admin')
+     // router.push('/admin')
+      window.location.replace("/admin");
     }
 },[])
 
