@@ -15,7 +15,7 @@ const ApplyBanner = () => {
           <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0">
             <div className="inline-flex rounded-md shadow">
               <Link href="/apply">
-                <a className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
+                <a className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded text-gray-900 bg-gray-100 hover:bg-gray-900 hover:text-white hover:border-white">
                   Submit resume
                 </a>
               </Link>
