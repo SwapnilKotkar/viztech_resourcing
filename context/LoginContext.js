@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 import { useRouter } from "next/router";
+import toast from "react-hot-toast";
 
 const Context = createContext();
 
@@ -19,6 +20,7 @@ export const LoginContext = ({ children }) => {
   const handleLogout = () => {
     localStorage.removeItem("signin_token");
     setLoginStatus(false);
+    toast.success('logout success');
   };
 
   return (

@@ -21,7 +21,6 @@ const Apply = () => {
 
   const handleFileChange = async (event) => {
     const file = event.target.files[0];
-
     await client.upload(file).then(
       function (result) {
         setFormData({
@@ -169,7 +168,53 @@ const Apply = () => {
                   />
                 </div>
               </div>
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                <div>
+                  <label className="sr-only" htmlFor="jobtitle">
+                    Applying for
+                  </label>
+                  <input
+                    className="w-full p-3 text-sm border-gray-200 rounded-lg"
+                    placeholder="Applying for"
+                    type="text"
+                    id="job-title"
+                    name="applyFor"
+                    value={formData.applyFor}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                <div>
+                  <label className="sr-only" htmlFor="qualification">
+                    Qualification
+                  </label>
+                  <input
+                    className="w-full p-3 text-sm border-gray-200 rounded-lg"
+                    placeholder="Qualification"
+                    type="text"
+                    id="qualification"
+                    name="qual"
+                    value={formData.qual}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+              </div>
               <div>
+                <label className="sr-only" htmlFor="name">
+                  Country
+                </label>
+                <input
+                  className="w-full p-3 text-sm border-gray-200 rounded-lg"
+                  placeholder="Country"
+                  type="text"
+                  id="country"
+                  name="country"
+                  value={formData.country}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
                 <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
                   {file && (
                     <div className="space-y-1 text-center">
@@ -221,54 +266,6 @@ const Apply = () => {
                     </div>
                   )}
                 </div>
-              </div>
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                <div>
-                  <label className="sr-only" htmlFor="jobtitle">
-                    Applying for
-                  </label>
-                  <input
-                    className="w-full p-3 text-sm border-gray-200 rounded-lg"
-                    placeholder="Applying for"
-                    type="text"
-                    id="job-title"
-                    name="applyFor"
-                    value={formData.applyFor}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-                <div>
-                  <label className="sr-only" htmlFor="qualification">
-                    Qualification
-                  </label>
-                  <input
-                    className="w-full p-3 text-sm border-gray-200 rounded-lg"
-                    placeholder="Qualification"
-                    type="text"
-                    id="qualification"
-                    name="qual"
-                    value={formData.qual}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-              </div>
-              <div>
-                <label className="sr-only" htmlFor="name">
-                  Country
-                </label>
-                <input
-                  className="w-full p-3 text-sm border-gray-200 rounded-lg"
-                  placeholder="Country"
-                  type="text"
-                  id="country"
-                  name="country"
-                  value={formData.country}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
               <div className="mt-4">
                 <button
                   type="submit"

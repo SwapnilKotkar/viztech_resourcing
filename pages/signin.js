@@ -27,16 +27,18 @@ const Signin = () => {
         },
         body: JSON.stringify({ email, password })
     });
+    
+    toast.loading('Redirecting...');
 
     const data = await res.json();
-
+    
     if(res.status === 200) {
-      localStorage.setItem('signin_token', data.token) //JSON.stringify(data.token)
       toast.success("login success")
+      localStorage.setItem('signin_token', data.token) 
       setInterval(() => {
       window.location.replace('/admin')
         window.location.replace('/admin')
-      }, 2000);
+      }, 1500);
     }else{
       toast.error("login failed")
     }
