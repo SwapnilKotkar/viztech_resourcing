@@ -1,5 +1,4 @@
 const jwt = require('jsonwebtoken');
-const Admin = require("../../models/adminSchema");
 
 const { connectToDatabase } = require('../../lib/mongodb');
 
@@ -14,7 +13,6 @@ export default async function handler(req, res) {
         }
     }
 }
-
 
 async function verifyAdmin(req,res){
     const {token} = req.body;
@@ -53,6 +51,5 @@ async function updateAdmin(req,res){
 
     }catch(err){
         res.status(401).json({'message': 'Failed to update'});
-    }
-    
+    }  
 }

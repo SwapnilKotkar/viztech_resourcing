@@ -1,7 +1,6 @@
 const { connectToDatabase } = require('../../lib/mongodb');
 
 const CryptoJS = require('crypto-js')
-const Admin = require("../../models/adminSchema")
 
 export default async function handler(req, res) {
     switch (req.method) {

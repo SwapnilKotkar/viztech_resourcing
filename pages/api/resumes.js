@@ -1,8 +1,5 @@
 const { connectToDatabase } = require('../../lib/mongodb');
 
-const Resume = require("../../models/resumeSchema")
-
-
 export default async function handler(req, res) {
     switch (req.method) {
         case 'GET': {
@@ -31,7 +28,6 @@ async function getResumes(req,res){
         res.status(400).json({error: err, message : "error in api/resumes"})
     }
 }
-
 
 async function postResume(req,res){
     const { fullName, email, mobile, resumeTitle, resumeURL, applyFor, qual, country } = req.body
