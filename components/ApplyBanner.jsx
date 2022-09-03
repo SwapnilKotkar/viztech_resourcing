@@ -6,7 +6,7 @@ const ApplyBanner = () => {
     <>
       <div className="bg-emerald-900">
         <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
-          <h2 className="text-2xl font-bold tracking-tight text-white sm:text-4xl">
+          <h2 className="text-2xl font-bold tracking-tight text-amber-200 sm:text-4xl">
             <span className="block">Ready to dive in?</span>
             <span className="block text-gray-300">
               Submit your resume today.

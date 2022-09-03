@@ -10,8 +10,8 @@ const Footer = () => {
     <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-12 lg:gap-8 pt-10 lg:pt-12 mb-16">
       <div className="col-span-full lg:col-span-2">
         <div className="lg:-mt-2 mb-4">
-          <a href="" className="inline-flex items-center text-green-100 text-xl md:text-2xl font-bold gap-2" aria-label="logo">
-            <svg width="95" height="94" viewBox="0 0 95 94" className="w-5 h-auto text-indigo-500" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <a href="" className="inline-flex items-center text-yellow-100 text-xl md:text-2xl font-bold gap-2" aria-label="logo">
+            <svg width="95" height="94" viewBox="0 0 95 94" className="w-5 h-auto text-green-300" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
               <path d="M96 0V47L48 94H0V47L48 0H96Z" />
             </svg>
 
@@ -19,7 +19,7 @@ const Footer = () => {
           </a>
         </div>
 
-        <p className="text-gray-400 sm:pr-8 mb-6">You Make The Hire. We Make It Simple.</p>
+        <p className="text-gray-100 font-medium sm:pr-8 mb-6">You Make The Hire. We Make It Simple.</p>
 
         <div className="flex gap-4">
           <a href="#" target="_blank" className="text-green-400 hover:text-green-500 active:text-green-600 transition duration-100">
@@ -49,24 +49,24 @@ const Footer = () => {
       </div>
 
       <div>
-        <div className="text-gray-100 font-bold tracking-widest uppercase mb-4">Menu</div>
+        <div className="text-amber-200 font-bold tracking-widest uppercase mb-4">Menu</div>
 
         <nav className="flex flex-col gap-4">
           <div>
           <Link href="/#home">
-            <a className="text-gray-400 hover:text-indigo-500 active:text-indigo-600 transition duration-100">Home</a>
+            <a className="text-gray-300 font-bold hover:text-green-400 active:text-gray-600 transition duration-100">Home</a>
           </Link>
           </div>
 
           <div>
           <Link href="/#about">
-            <a className="text-gray-400 hover:text-indigo-500 active:text-indigo-600 transition duration-100">About Us</a>
+            <a className="text-gray-300 font-bold hover:text-green-400 active:text-gray-600 transition duration-100">About Us</a>
             </Link>
           </div>
 
           <div>
           <Link href="/apply">
-            <a className="text-gray-400 hover:text-indigo-500 active:text-indigo-600 transition duration-100">Apply Now</a>
+            <a className="text-gray-300 font-bold hover:text-green-400 active:text-gray-600 transition duration-100">Apply Now</a>
             </Link>
           </div>
         </nav>
@@ -74,76 +74,76 @@ const Footer = () => {
     
 
       <div>
-        <div className="text-green-100 font-bold tracking-widest uppercase mb-4">Address</div>
+        <div className="text-amber-200 font-bold tracking-widest uppercase mb-4">Address</div>
 
         <nav className="flex flex-col gap-4">
           <div>
-            <a href="#" className="text-gray-400 hover:text-indigo-500 active:text-indigo-600 transition duration-100">About</a>
+            <a href="#" className="text-gray-300 font-bold hover:text-green-400 active:text-gray-600 transition duration-100">About</a>
           </div>
 
           <div>
-            <a href="#" className="text-gray-400 hover:text-indigo-500 active:text-indigo-600 transition duration-100">Investor Relations</a>
+            <a href="#" className="text-gray-300 font-bold hover:text-green-400 active:text-gray-600 transition duration-100">Investor Relations</a>
           </div>
 
           <div>
-            <a href="#" className="text-gray-400 hover:text-indigo-500 active:text-indigo-600 transition duration-100">Jobs</a>
+            <a href="#" className="text-gray-300 font-bold hover:text-green-400 active:text-gray-600 transition duration-100">Jobs</a>
           </div>
 
           <div>
-            <a href="#" className="text-gray-400 hover:text-indigo-500 active:text-indigo-600 transition duration-100">Press</a>
+            <a href="#" className="text-gray-300 font-bold hover:text-green-400 active:text-gray-600 transition duration-100">Press</a>
           </div>
 
           <div>
-            <a href="#" className="text-gray-400 hover:text-indigo-500 active:text-indigo-600 transition duration-100">Blog</a>
+            <a href="#" className="text-gray-300 font-bold hover:text-green-400 active:text-gray-600 transition duration-100">Blog</a>
           </div>
         </nav>
       </div>
     
 
       <div>
-        <div className="text-green-100 font-bold tracking-widest uppercase mb-4">Support</div>
+        <div className="text-amber-200 font-bold tracking-widest uppercase mb-4">Support</div>
 
         <nav className="flex flex-col gap-4">
           <div>
-            <a href="#" className="text-gray-400 hover:text-indigo-500 active:text-indigo-600 transition duration-100">Contact</a>
+            <a href="#" className="text-gray-300 font-bold hover:text-green-400 active:text-gray-600 transition duration-100">Contact</a>
           </div>
 
           <div>
-            <a href="#" className="text-gray-400 hover:text-indigo-500 active:text-indigo-600 transition duration-100">Documentation</a>
+            <a href="#" className="text-gray-300 font-bold hover:text-green-400 active:text-gray-600 transition duration-100">Documentation</a>
           </div>
 
           <div>
-            <a href="#" className="text-gray-400 hover:text-indigo-500 active:text-indigo-600 transition duration-100">Chat</a>
+            <a href="#" className="text-gray-300 font-bold hover:text-green-400 active:text-gray-600 transition duration-100">Chat</a>
           </div>
 
           <div>
-            <a href="#" className="text-gray-400 hover:text-indigo-500 active:text-indigo-600 transition duration-100">FAQ</a>
+            <a href="#" className="text-gray-300 font-bold hover:text-green-400 active:text-gray-600 transition duration-100">FAQ</a>
           </div>
         </nav>
       </div>
     
 
       <div>
-        <div className="text-green-100 font-bold tracking-widest uppercase mb-4">Legal</div>
+        <div className="text-amber-200 font-bold tracking-widest uppercase mb-4">Legal</div>
 
         <nav className="flex flex-col gap-4">
           <div>
-            <a href="#" className="text-gray-400 hover:text-indigo-500 active:text-indigo-600 transition duration-100">Terms of Service</a>
+            <a href="#" className="text-gray-300 font-bold hover:text-green-400 active:text-gray-600 transition duration-100">Terms of Service</a>
           </div>
 
           <div>
-            <a href="#" className="text-gray-400 hover:text-indigo-500 active:text-indigo-600 transition duration-100">Privacy Policy</a>
+            <a href="#" className="text-gray-300 font-bold hover:text-green-400 active:text-gray-600 transition duration-100">Privacy Policy</a>
           </div>
 
           <div>
-            <a href="#" className="text-gray-400 hover:text-indigo-500 active:text-indigo-600 transition duration-100">Cookie settings</a>
+            <a href="#" className="text-gray-300 font-bold hover:text-green-400 active:text-gray-600 transition duration-100">Cookie settings</a>
           </div>
         </nav>
       </div>
     
     </div>
 
-    <div className="text-green-400 text-md text-center border-t border-green-800 py-8">© Vzitech resourcing. All rights reserved.</div>
+    <div className="text-green-400 text-lg font-medium text-center border-t border-green-800 py-8">© Vzitech resourcing. All rights reserved.</div>
   </footer>
 </div>
 </div>
