@@ -1,22 +1,21 @@
 import React, { useState, useEffect } from "react";
 import toast from "react-hot-toast";
-import { useRouter } from "next/router";
 
 const Apply = () => {
   const apikey = "AUgEpoFGpRQa0SUvJ34woz";
   const client = require("filestack-js").init(apikey);
 
-  const router = useRouter();
+  const date = new Date().toISOString().slice(0, 10);
+
   const [file, setFile] = useState(false);
   const [formData, setFormData] = useState({
-    fullName: "",
+    fullName: "", 
     email: "",
-    mobile: "",
+    joinFrom: date,
     resumeTitle: "",
     resumeURL: "",
     applyFor: "",
-    qual: "",
-    country: "",
+    comments: "",
   });
 
   const handleFileChange = async (event) => {
@@ -55,12 +54,11 @@ const Apply = () => {
     const {
       fullName,
       email,
-      mobile,
+      joinFrom,
       resumeTitle,
       resumeURL,
       applyFor,
-      qual,
-      country,
+      comments,
     } = formData;
 
     const res = await fetch("/api/resumes", {
@@ -71,12 +69,11 @@ const Apply = () => {
       body: JSON.stringify({
         fullName,
         email,
-        mobile,
+        joinFrom,
         resumeTitle,
         resumeURL,
         applyFor,
-        qual,
-        country,
+        comments,
       }),
     });
 
@@ -94,12 +91,12 @@ const Apply = () => {
     setFormData({
       fullName: "",
       email: "",
-      mobile: "",
+      joinFrom: "",
       resumeTitle: "",
       resumeURL: "",
       applyFor: "",
       qual: "",
-      country: "",
+      comments: "",
     });
   };
 
@@ -126,12 +123,13 @@ const Apply = () => {
           <div className="p-8 bg-white rounded-lg shadow-lg lg:p-12 lg:col-span-3">
             <form method="POST" onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className="sr-only" htmlFor="name">
+                <label className="text-sm font-medium text-gray-600" htmlFor="name">
                   Your full name
+                  <span className="text-red-500 font-bold">*</span>
                 </label>
                 <input
                   className="w-full p-3 text-sm border-gray-200 rounded-lg"
-                  placeholder="Your full name"
+                  placeholder=""
                   type="text"
                   id="name"
                   name="fullName"
@@ -143,12 +141,13 @@ const Apply = () => {
 
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div>
-                  <label className="sr-only" htmlFor="email">
+                  <label className="text-sm font-medium text-gray-600" htmlFor="email">
                     Email
+                    <span className="text-red-500 font-bold">*</span>
                   </label>
                   <input
                     className="w-full p-3 text-sm border-gray-200 rounded-lg"
-                    placeholder="Email address"
+                    placeholder=""
                     type="email"
                     id="email"
                     name="email"
@@ -159,29 +158,29 @@ const Apply = () => {
                 </div>
 
                 <div>
-                  <label className="sr-only" htmlFor="phone">
-                    Phone
+                  <label className="text-sm font-medium text-gray-600" htmlFor="phone">
+                    Available to join from
                   </label>
                   <input
-                    className="w-full p-3 text-sm border-gray-200 rounded-lg"
-                    placeholder="Mobile number"
-                    type="number"
-                    id="phone"
-                    name="mobile"
-                    value={formData.mobile}
+                    className="w-full p-3 text-sm text-gray-500 border-gray-200 rounded-lg"
+                    placeholder=""
+                    type="date"
+                    id="joinfrom"
+                    name="joinFrom"
+                    value={formData.joinFrom}
                     onChange={handleChange}
-                    required
                   />
                 </div>
               </div>
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div>
-                  <label className="sr-only" htmlFor="jobtitle">
+                  <label className="text-sm font-medium text-gray-600" htmlFor="jobtitle">
                     Applying for
+                    <span className="text-red-500 font-bold">*</span>
                   </label>
                   <input
                     className="w-full p-3 text-sm border-gray-200 rounded-lg"
-                    placeholder="Applying for"
+                    placeholder=""
                     type="text"
                     id="job-title"
                     name="applyFor"
@@ -190,13 +189,13 @@ const Apply = () => {
                     required
                   />
                 </div>
-                <div>
-                  <label className="sr-only" htmlFor="qualification">
-                    Qualification
+                {/* <div>
+                  <label className="text-sm font-medium text-gray-600" htmlFor="qualification">
+                    Qualification*
                   </label>
                   <input
                     className="w-full p-3 text-sm border-gray-200 rounded-lg"
-                    placeholder="Qualification"
+                    placeholder=""
                     type="text"
                     id="qualification"
                     name="qual"
@@ -204,21 +203,20 @@ const Apply = () => {
                     onChange={handleChange}
                     required
                   />
-                </div>
+                </div> */}
               </div>
               <div>
-                <label className="sr-only" htmlFor="name">
-                  Country
+                <label className="text-sm font-medium text-gray-600" htmlFor="name">
+                  Comments
                 </label>
                 <input
                   className="w-full p-3 text-sm border-gray-200 rounded-lg"
-                  placeholder="Country"
+                  placeholder=""
                   type="text"
-                  id="country"
-                  name="country"
-                  value={formData.country}
+                  id="comments"
+                  name="comments"
+                  value={formData.comments}
                   onChange={handleChange}
-                  required
                 />
               </div>
                 <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
@@ -255,6 +253,7 @@ const Apply = () => {
                           className="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500"
                         >
                           <span>Upload a file</span>
+                          <span className="text-red-500 font-bold">*</span>
                           <input
                             id="file-upload"
                             name="resumeTitle"
