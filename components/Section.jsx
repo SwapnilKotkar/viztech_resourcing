@@ -5,7 +5,7 @@ const Section = () => {
   const arr = [1, 2, 3, 4, 5, 6];
 
   return (
-    <div className="py-12 bg-gray-100">
+    <div className="py-12 bg-green-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <section>
           <div className="max-w-screen-xl px-4 py-16 sm:px-6 lg:px-0">
@@ -23,7 +23,7 @@ const Section = () => {
                 </p>
 
                 <a
-                  className="inline-flex items-center px-8 py-3 mt-8 text-white bg-gray-900 border border-gray-900 rounded hover:bg-transparent hover:text-gray-600 active:text-gray-500 focus:outline-none focus:ring"
+                  className="inline-flex items-center px-8 py-3 mt-8 text-white bg-green-900 border border-green-900 rounded hover:bg-transparent hover:text-green-600 active:text-green-500 focus:outline-none focus:ring"
                   href="/get-started"
                 >
                   <span className="text-sm font-medium"> Get Started </span>
@@ -49,10 +49,10 @@ const Section = () => {
                 {arr.map((value) => (
                   <a
                     key={value}
-                    className="block p-4 border border-gray-100 shadow-lg rounded-xl focus:outline-none focus:ring hover:border-gray-200 hover:ring-1 hover:ring-gray-400"
+                    className="block p-4 border border-green-100 shadow-lg rounded-xl focus:outline-none focus:ring hover:border-green-200 hover:ring-1 hover:ring-green-400"
                     href="/accountant"
                   >
-                    <span className="inline-block p-3 rounded-lg bg-gray-900 text-white">
+                    <span className="inline-block p-3 rounded-lg bg-green-900 text-white">
                     <div className="w-4 h-4">
                         <GlobeAltIcon/>
                     </div>

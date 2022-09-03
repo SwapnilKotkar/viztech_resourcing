@@ -32,8 +32,6 @@ const AdminInfo = () => {
       },
       body: JSON.stringify({ firstName, lastName, email }),
     });
-    const data = await res.json()
-    console.log(data)
 
     if (res.status === 200) {
       toast.success("updated successfully!");
@@ -71,7 +69,7 @@ const AdminInfo = () => {
           <div className="py-4 lg:py-0 lg:col-span-2">
 
             <div className="flex justify-center">
-              <a href="" className="text-2xl font-bold text-gray-900">
+              <a href="" className="text-2xl font-bold text-emerald-900">
                 Update admin information
               </a>
             </div>
@@ -132,7 +130,7 @@ const AdminInfo = () => {
               <div className="mt-4">
                 <button
                   type="submit"
-                  className="inline-flex items-center justify-center w-full px-5 py-3 text-white text-sm border bg-gray-900 border-gray-900 rounded hover:bg-transparent hover:text-gray-600 active:text-gray-500 rounded sm:w-auto"
+                  className="inline-flex items-center justify-center w-full px-5 py-3 text-white text-sm border bg-emerald-900 border-emerald-900 rounded hover:bg-transparent hover:text-emerald-600 active:text-emerald-500 rounded sm:w-auto"
                 >
                   <span className="font-medium"> Update </span>
 

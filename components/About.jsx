@@ -43,10 +43,10 @@ const contents = [
 const About = () => {
   return (
     <>
-      <div className="py-12 bg-gray-100" id="about">
+      <div className="py-12 bg-emerald-100" id="about">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center pb-8">
-            <p className="mt-2 text-3xl leading-8 font-bold tracking-tight text-gray-900 sm:text-4xl">
+            <p className="mt-2 text-3xl leading-8 font-bold tracking-tight text-emerald-900 sm:text-4xl">
               About Us
             </p>
           </div>
@@ -56,10 +56,10 @@ const About = () => {
               {features.map((feature) => (
                 <div key={feature.name} className="relative">
                   <dt>
-                    <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-gray-900 text-white">
+                    <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-emerald-900 text-white">
                       <feature.icon className="h-6 w-6" aria-hidden="true" />
                     </div>
-                    <p className="ml-16 text-lg leading-6 font-medium text-gray-900">
+                    <p className="ml-16 text-lg leading-6 font-medium text-emerald-900">
                       {feature.name}
                     </p>
                   </dt>
@@ -72,11 +72,11 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="bg-gray-100 py-6 sm:py-8 lg:py-12">
+      <div className="bg-emerald-100 py-6 sm:py-8 lg:py-12">
         <div className="max-w-screen-xl px-4 md:px-8 mx-auto">
           <div className="grid md:grid-cols-2 py-8 gap-8 lg:gap-12">
             <div>
-              <div className="h-64 md:h-auto bg-gray-100 overflow-hidden rounded-lg shadow-lg">
+              <div className="h-64 md:h-auto bg-emerald-100 overflow-hidden rounded-lg shadow-lg">
                 <img
                   src="https://images.unsplash.com/photo-1542340916-951bb72c8f74?auto=format&q=75&fit=crop&w=600&h=450"
                   loading="lazy"
@@ -86,7 +86,7 @@ const About = () => {
               </div>
             </div>
             <div className="md:pt-8">
-              <h1 className="text-gray-800 text-2xl sm:text-3xl font-bold text-center md:text-left mb-4 md:mb-6">
+              <h1 className="text-emerald-800 text-2xl sm:text-3xl font-bold text-center md:text-left mb-4 md:mb-6">
                 {contents[0].name}
               </h1>
 
@@ -97,7 +97,7 @@ const About = () => {
           </div>
           <div className="grid md:grid-cols-2 py-8 gap-8 lg:gap-12">
             <div className="md:pt-8">
-              <h1 className="text-gray-800 text-2xl sm:text-3xl font-bold text-center md:text-left mb-4 md:mb-6">
+              <h1 className="text-emerald-800 text-2xl sm:text-3xl font-bold text-center md:text-left mb-4 md:mb-6">
                 {contents[1].name}
               </h1>
 
@@ -106,7 +106,7 @@ const About = () => {
               </p>
             </div>
             <div>
-              <div className="h-64 md:h-auto bg-gray-100 overflow-hidden rounded-lg shadow-lg">
+              <div className="h-64 md:h-auto bg-emerald-100 overflow-hidden rounded-lg shadow-lg">
                 <img
                   src="https://images.unsplash.com/photo-1610465299996-30f240ac2b1c?auto=format&q=75&fit=crop&w=600&h=450"
                   loading="lazy"

@@ -32,7 +32,7 @@ const SubMenu = () => {
               href={item.link}
               key={item.name}
             >
-              <a className="px-1 py-3 sm:p-4 -mb-px border-transparent hover:text-indigo-500 hover:border-current" onClick={() => handleView(item.id)} >
+              <a className="px-1 py-3 sm:p-4 -mb-px border-transparent text-emerald-900 hover:text-emerald-500 hover:border-current" onClick={() => handleView(item.id)} >
                 {item.name}
               </a>
             </Link>

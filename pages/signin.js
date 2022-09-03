@@ -60,7 +60,7 @@ const Signin = () => {
   return (
     <div className="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
       <div className="max-w-lg mx-auto">
-        <h1 className="text-2xl font-bold text-center text-gray-900 sm:text-3xl">
+        <h1 className="text-2xl font-bold text-center text-emerald-900 sm:text-3xl">
           Welcome Back!
         </h1>
 
@@ -69,10 +69,10 @@ const Signin = () => {
           className="p-8 mt-6 mb-0 space-y-4 rounded-lg shadow-2xl"
           onSubmit={handleSubmit}
         >
-          <p className="text-lg font-medium">Sign in to your account</p>
+          <p className="text-lg text-emerald-900 font-medium">Sign in to your account</p>
 
           <div>
-            <label htmlFor="email" className="text-sm font-medium">
+            <label htmlFor="email" className="text-sm text-emerald-900 font-medium">
               Email
             </label>
 
@@ -95,7 +95,7 @@ const Signin = () => {
           </div>
 
           <div>
-            <label htmlFor="password" className="text-sm font-medium">
+            <label htmlFor="password" className="text-sm text-emerald-900 font-medium">
               Password
             </label>
 
@@ -124,7 +124,7 @@ const Signin = () => {
 
           <button
             type="submit"
-            className="block w-full px-5 py-3 text-sm font-medium text-white bg-gray-900 rounded-lg"
+            className="block w-full px-5 py-3 text-sm font-medium text-white bg-emerald-900 rounded-lg"
           >
             Sign in
           </button>

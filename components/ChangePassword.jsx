@@ -35,9 +35,6 @@ const ChangePassword = () => {
         },
         body: JSON.stringify({ token, password })
       });
-      data = await res.json()
-      console.log(data)
-
 
       if (res.status === 200) {
         toast.success("updated successfully!");
@@ -85,7 +82,7 @@ const ChangePassword = () => {
             </p> */}
 
               <div className="flex justify-center">
-                <a href="" className="text-2xl font-bold text-gray-900">
+                <a href="" className="text-2xl font-bold text-emerald-900">
                   Update your password
                 </a>
 
@@ -103,7 +100,7 @@ const ChangePassword = () => {
               >
                 <button
                   type="button"
-                  className="group relative w-1/2 md:w-1/4 flex justify-center mb-2 py-2 px-4 border border-gray-400 text-sm font-medium rounded text-gray-900 bg-gray-200 hover:bg-white-700 focus:outline-none focus:border-gray-900"
+                  className="group relative w-1/2 md:w-1/4 flex justify-center mb-2 py-2 px-4 border border-emerald-200 text-sm font-medium rounded text-emerald-900 bg-emerald-50 hover:bg-white-700 focus:outline-none focus:border-emerald-900"
                   onClick={() => setShowPass((showPass) => !showPass)}
                 >
                   Show password
@@ -146,7 +143,7 @@ const ChangePassword = () => {
                 <div className="mt-4">
                   <button
                     type="submit"
-                    className="inline-flex items-center justify-center w-full px-5 py-3 text-white text-sm border bg-gray-900 border-gray-900 rounded hover:bg-transparent hover:text-gray-600 active:text-gray-500 rounded sm:w-auto"
+                    className="inline-flex items-center justify-center w-full px-5 py-3 text-white text-sm border bg-emerald-900 border-emerald-900 rounded hover:bg-transparent hover:text-emerald-600 active:text-emerald-500 rounded sm:w-auto"
                   >
                     <span className="font-medium"> Update </span>
 

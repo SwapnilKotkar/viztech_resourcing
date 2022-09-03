@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import toast from "react-hot-toast";
 
 import SubMenu from "../components/SubMenu";
 import { View } from "../components/View";
@@ -31,12 +30,5 @@ const Admin = () => { //{ resumeData }
     </>
   );
 };
-
-// export async function getServerSideProps() {
-//   const resuemResponse = await fetch("http://localhost:3000/api/resumes");
-//   const resumeData = await resuemResponse.json();
-
-//   return { props: { resumeData } };
-// }
 
 export default Admin;

@@ -29,13 +29,13 @@ const Navbar = () => {
   return (
     <div className=" relative bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="flex justify-between items-center border-gray-100 py-6 md:justify-start md:space-x-10">
+        <div className="flex justify-between items-center border-emerald-100 py-6 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
             <a href="#">
               <span className="sr-only">Viztech Logo</span>
               <img
                 className="h-8 w-auto sm:h-10"
-                src="https://tailwindui.com/img/logos/workflow-mark.svg?color=gray&shade=900"
+                src="https://tailwindui.com/img/logos/workflow-mark.svg?color=emerald&shade=900"
                 alt=""
               />
             </a>
@@ -43,16 +43,16 @@ const Navbar = () => {
           <div className="-mr-2 -my-2 md:hidden">
             <div
               onClick={menuOpen}
-              className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-900"
+              className="bg-white rounded-md p-2 inline-flex items-center justify-center text-emerald-400 hover:text-emerald-500 hover:bg-emerald-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-emerald-900"
             >
               <span className="sr-only">Open menu</span>
-              <Bars3Icon className="h-6 w-6" aria-hidden="true" color="black" />
+              <Bars3Icon className="h-6 w-6" aria-hidden="true" color="green" />
             </div>
           </div>
           <div as="nav" className="hidden md:flex space-x-10">
             {menuList.map((item) => (
               <Link key={item.name} href={item.href}>
-                <a className="text-base font-medium text-gray-500 hover:text-gray-900">
+                <a className="text-base font-medium text-green-700 hover:text-green-900">
                   {item.name}
                 </a>
               </Link>
@@ -62,14 +62,14 @@ const Navbar = () => {
             {loginStatus && (
               <>
                 <Link href="/admin">
-                  <a className="text-base font-medium text-gray-500 hover:text-gray-900">
+                  <a className="text-base font-medium text-green-700 hover:text-green-900">
                     Dashboard
                   </a>
                 </Link>
                 <Link href="/">
                   <a
                     href="#"
-                    className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded shadow-sm text-base font-medium text-white bg-gray-900 hover:bg-gray-900"
+                    className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded shadow-sm text-base font-medium text-white bg-emerald-900 hover:bg-emerald-900"
                     onClick={handleLogout}
                   >
                     Log out
@@ -81,7 +81,7 @@ const Navbar = () => {
               <Link href="/signin">
                 <a
                   href="#"
-                  className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded shadow-sm text-base font-medium text-white bg-gray-900 hover:bg-gray-900"
+                  className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded shadow-sm text-base font-medium text-white bg-emerald-900 hover:bg-emerald-900"
                 >
                   Admin Sign in
                 </a>
@@ -95,26 +95,26 @@ const Navbar = () => {
         focus
         className={`absolute top-0 inset-x-0 p-2 transition transform origin-top-right ${menu} md:hidden z-10`}
       >
-        <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
+        <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-emerald-50">
           <div className="pt-5 pb-6 px-5">
             <div className="flex items-center justify-between">
               <div>
                 <img
                   className="h-8 w-auto"
-                  src="https://tailwindui.com/img/logos/workflow-mark.svg?color=gray&shade=900"
+                  src="https://tailwindui.com/img/logos/workflow-mark.svg?color=emerald&shade=900"
                   alt="Workflow"
                 />
               </div>
               <div className="-mr-2">
                 <div
                   onClick={menuClose}
-                  className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-900"
+                  className="bg-white rounded-md p-2 inline-flex items-center justify-center text-emerald-400 hover:text-emerald-500 hover:bg-emerald-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-emerald-900"
                 >
                   <span className="sr-only">Close menu</span>
                   <XMarkIcon
                     className="h-6 w-6"
                     aria-hidden="true"
-                    color="black"
+                    color="green"
                   />
                 </div>
               </div>
@@ -124,7 +124,7 @@ const Navbar = () => {
                 {menuList.map((item) => (
                   <Link key={item.name} href={item.href}>
                     <div onClick={menuClose}>
-                      <a className="text-base font-medium text-gray-700 hover:text-gray-900">
+                      <a className="text-base font-medium text-green-700 hover:text-emerald-900">
                         {item.name}
                       </a>
                     </div>
@@ -138,7 +138,7 @@ const Navbar = () => {
               <>
                 <Link href="/admin">
                   <div onClick={menuClose}>
-                    <a className="text-base font-medium text-gray-700 hover:text-gray-900">
+                    <a className="text-base font-medium text-green-700 hover:text-emerald-900">
                       Dashboard
                     </a>
                   </div>
@@ -147,7 +147,7 @@ const Navbar = () => {
                   <div onClick={menuClose}>
                     <a
                       href="#"
-                      className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded shadow-sm text-base font-medium text-white bg-gray-900 hover:bg-gray-900"
+                      className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded shadow-sm text-base font-medium text-white bg-emerald-900 hover:bg-emerald-900"
                       onClick={handleLogout}
                     >
                       Log out
@@ -159,7 +159,7 @@ const Navbar = () => {
             {!loginStatus && (
               <Link href="/signin">
                 <div onClick={menuClose}>
-                  <a className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded shadow-sm text-base font-medium text-white bg-gray-900 hover:bg-gray-900">
+                  <a className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded shadow-sm text-base font-medium text-white bg-emerald-900 hover:bg-emerald-900">
                     Admin Sign in
                   </a>
                 </div>
