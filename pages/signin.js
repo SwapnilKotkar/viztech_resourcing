@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { useRouter } from "next/router";
 import toast from 'react-hot-toast';
 import { AtSymbolIcon, EyeIcon, EyeSlashIcon } from "@heroicons/react/24/outline";
 
 const Signin = () => {
   const [showPass, setShowPass] = useState(false);
-  const router = useRouter()
   const [login, setLogin] = useState({
     email: "",
     password: "" 
@@ -18,6 +16,9 @@ const Signin = () => {
 
   const handleSubmit = async (e) =>{
     e.preventDefault();
+
+    toast.loading("Redirecting...");
+
     const {email, password} = login;
 
     const res = await fetch('/api/signin', {
@@ -28,18 +29,20 @@ const Signin = () => {
         body: JSON.stringify({ email, password })
     });
     
-    toast.loading('Redirecting...');
-
     const data = await res.json();
-    
+
     if(res.status === 200) {
-      toast.success("login success")
+
+      toast.remove();
+      toast.success("Login Success!");
+
       localStorage.setItem('signin_token', data.token) 
       setInterval(() => {
       window.location.replace('/admin')
-        window.location.replace('/admin')
-      }, 1500);
+      }, 500);
+
     }else{
+      toast.remove();
       toast.error("login failed")
     }
     setLogin({
@@ -49,11 +52,8 @@ const Signin = () => {
   }
 
   useEffect( ()=>{
-    const token = localStorage.getItem('signin_token')
-    if(token){
+    if(localStorage.getItem('signin_token')){
       window.location.replace('/admin')
-     // router.push('/admin')
-      window.location.replace("/admin");
     }
 },[])
 

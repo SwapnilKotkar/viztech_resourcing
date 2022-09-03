@@ -20,6 +20,8 @@ const Apply = () => {
   });
 
   const handleFileChange = async (event) => {
+    toast.loading('Uploading file...')
+
     const file = event.target.files[0];
     await client.upload(file).then(
       function (result) {
@@ -35,9 +37,12 @@ const Apply = () => {
     );
 
     if (client) {
+      toast.remove()
+      toast.success('File Uploaded')
       setFile(true);
     }
   };
+
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
@@ -45,6 +50,7 @@ const Apply = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    toast.loading('Submitting resume...')
 
     const {
       fullName,
@@ -74,14 +80,14 @@ const Apply = () => {
       }),
     });
 
-    const data = await res.json();
-
     if (res.status === 200) {
+      toast.remove()
       toast.success("Resume Submitted");
       setInterval(() => {
         window.location.replace("/");
-      }, 2000);
+      }, 500);
     } else {
+      toast.remove()
       toast.error("Upload failed");
     }
 
