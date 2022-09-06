@@ -12,6 +12,11 @@ const SubMenu = () => {
       link: "",
     },
     {
+      id: "approvedResumes",
+      name: "Approved resumes",
+      link: "",
+    },
+    {
       id: "adminInfoView",
       name: "Admin info",
       link: "",

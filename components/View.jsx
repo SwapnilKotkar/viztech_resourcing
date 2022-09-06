@@ -2,18 +2,26 @@ import React from 'react'
 import AdminInfo from "../components/AdminInfo";
 import ChangePassword from "../components/ChangePassword";
 import ViewResumes from "../components/ViewResumes";
+import ApprovedResumes from './ApprovedResumes';
 import { useViewContext } from "../context/viewContext";
 
-export const View = ({resumeData}) => {
+export const View = () => {
   const {view} = useViewContext();
 
     switch (view) {
         case "resumesView":
           return (
             <>
-              <ViewResumes resumes={resumeData} />
+              <ViewResumes />
             </>
           );
+
+        case "approvedResumes":
+        return (
+          <>
+            <ApprovedResumes />
+          </>
+        );
     
         case "changePassView":
           return (
@@ -33,7 +41,7 @@ export const View = ({resumeData}) => {
           default:
           return (
             <>
-              <ViewResumes resumes={resumeData} />
+              <ViewResumes />
             </>
           );
       }
