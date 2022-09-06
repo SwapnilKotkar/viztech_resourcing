@@ -5,6 +5,8 @@ const Apply = () => {
   const apikey = "AUgEpoFGpRQa0SUvJ34woz";
   const client = require("filestack-js").init(apikey);
 
+  const uniqueID = new Date().getTime()
+
   const date = new Date().toISOString().slice(0, 10);
 
   const [file, setFile] = useState(false);
@@ -15,7 +17,7 @@ const Apply = () => {
     resumeTitle: "",
     resumeURL: "",
     applyFor: "",
-    comments: "",
+    comments: "No comments",
   });
 
   const handleFileChange = async (event) => {
@@ -67,6 +69,7 @@ const Apply = () => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
+        uniqueID,
         fullName,
         email,
         joinFrom,

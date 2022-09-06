@@ -9,6 +9,10 @@ export default async function handler(req, res) {
         case 'POST': {
             return postResume(req, res);
         }
+
+        case 'DELETE': {
+            return deleteResume(req, res);
+        }
     }
 }
 
@@ -30,7 +34,7 @@ async function getResumes(req,res){
 }
 
 async function postResume(req,res){
-    const { fullName, email, joinFrom, resumeTitle, resumeURL, applyFor, comments } = req.body
+    const { uniqueID, fullName, email, joinFrom, resumeTitle, resumeURL, applyFor, comments } = req.body
 
     if(!fullName|| !email || !resumeTitle || !resumeURL || !applyFor ) {
         return res.status(422).json({ error: "please fill the data properly !"});
@@ -39,7 +43,7 @@ async function postResume(req,res){
     try{
         let { db } = await connectToDatabase();
 
-        const resume = await db.collection('resumes').insertOne({ fullName, email, joinFrom, resumeTitle, resumeURL, applyFor, comments });
+        const resume = await db.collection('resumes').insertOne({ uniqueID, fullName, email, joinFrom, resumeTitle, resumeURL, applyFor, comments });
 
         if(resume){
         res.status(200).json({message : "Resume submitted successfully !"})
@@ -50,7 +54,25 @@ async function postResume(req,res){
 
     }catch(err){ 
         res.status(400).json({message : "Try again to submit resume!"})
-        console.log({err: err});
     }
 }
 
+async function deleteResume(req,res){
+    const {id } = req.body
+
+    try{
+        let { db } = await connectToDatabase();
+
+        const findResume = await db.collection('resumes').findOneAndDelete({uniqueID : id})
+
+        if(findResume){
+            res.status(200).json({message:"Resume deleted from approved list"})
+        }
+        else{
+            res.status(400).json({message : "resume not found, try again"})
+        }
+
+    }catch(err){ 
+        res.status(400).json({message : "Try again to delete resume!"})
+    }
+}
