@@ -1,22 +1,23 @@
 import React from 'react'
+import Image from 'next/image'
 
 const Blogs = () => {
 
     const blogsData = [
         {
-            image: "https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&q=75&fit=crop&w=600",
-            date:"July 19, 2021",
-            heading:"New trends in Tech",
+            image: '/static/images/blog-one.jpg',
+            date: "July 19, 2021",
+            heading: "New trends in Tech",
         },
         {
-            image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&q=75&fit=crop&w=600",
-            date:"April 07, 2021",
-            heading:"Working with legacy stacks",
+            image: '/static/images/blog-two.jpg',
+            date: "April 07, 2021",
+            heading: "Working with legacy stacks",
         },
         {
-            image: "https://images.unsplash.com/photo-1542759564-7ccbb6ac450a?auto=format&q=75&fit=crop&w=600",
-            date:"March 15, 2021",
-            heading:"10 best smartphones for devs",
+            image: '/static/images/blog-three.jpg',
+            date: "March 15, 2021",
+            heading: "10 best smartphones for devs",
         }
     ]
 
@@ -34,8 +35,8 @@ const Blogs = () => {
 
     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 xl:gap-8">
     {blogsData.map((blog)=> (
-        <a key={blog.heading} href="#" className="group h-48 md:h-64 xl:h-96 flex flex-col bg-green-100 rounded-lg shadow-lg overflow-hidden relative">
-        <img src={blog.image} className="w-full h-full object-cover object-center absolute inset-0 group-hover:scale-110 transition duration-200" />
+        <a key={blog.heading} className="group h-48 md:h-64 xl:h-96 flex flex-col bg-green-100 rounded-lg shadow-lg overflow-hidden relative">
+        <Image src={blog?.image} priority layout='fill' className="w-full h-full object-cover object-center absolute inset-0 group-hover:scale-110 transition duration-200" alt='blog images' />
 
         <div className="bg-gradient-to-t from-green-800 md:via-transparent to-transparent absolute inset-0 pointer-events-none"></div>
 

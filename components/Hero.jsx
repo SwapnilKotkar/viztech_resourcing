@@ -1,5 +1,7 @@
 import React from 'react'
-import Link from 'next/link'
+import Image from 'next/image'
+import Hero1 from '../public/static/images/hero-one.jpg'
+import Hero2 from '../public/static/images/hero-two.jpg'
 
 const Hero = () => {
   return (
@@ -16,12 +18,13 @@ const Hero = () => {
       </div>
 
       <div className="w-full lg:w-2/3 flex mb-12 md:mb-16">
-        <div className="bg-gray-100 rounded-lg shadow-lg overflow-hidden relative z-5 top-12 md:top-16 left-12 md:left-16 -ml-12 lg:ml-0">
-          <img src="https://images.unsplash.com/photo-1610465299996-30f240ac2b1c?auto=format&q=75&fit=crop&w=550&h=550" loading="lazy" alt="Photo by Kaung Htet" className="w-full h-full object-cover object-center" />
+        <div className='flex items-center'>
+        <div className="overflow-hidden relative z-5 top-12 md:top-16 left-12 md:left-16 -ml-12 lg:ml-0">
+        <Image src={Hero1} alt="Photo by Kaung Htet" objectFit='cover' priority height={600} width={500} className="rounded-lg shadow-lg object-cover object-center" />
         </div>
-
-        <div className="bg-gray-100 rounded-lg shadow-lg overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1586295166487-b265f7e83a7f?auto=format&q=75&fit=crop&w=550&h=550" loading="lazy" alt="Photo by Manny Moreno" className="w-full h-full object-cover object-center" />
+        <div className="overflow-hidden">
+          <Image src={Hero2} alt="Photo by Manny Moreno" objectFit='cover' height={600} width={500} priority className="rounded-lg shadow-lg object-cover object-center" />
+        </div>
         </div>
       </div>
     </div>

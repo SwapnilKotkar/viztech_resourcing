@@ -1,7 +1,10 @@
 import React from "react";
+import Image from 'next/image'
+import About1 from '../public/static/images/about-one.jpg'
+import About2 from '../public/static/images/about-two.jpg'
+
 import {
   BoltIcon,
-  ChatBubbleBottomCenterTextIcon,
   GlobeAltIcon,
   ScaleIcon,
 } from "@heroicons/react/24/outline";
@@ -74,14 +77,15 @@ const About = () => {
       </div>
       <div className="bg-emerald-100 py-6 sm:py-8 lg:py-12">
         <div className="max-w-screen-xl px-4 md:px-8 mx-auto">
-          <div className="grid md:grid-cols-2 py-8 gap-8 lg:gap-12">
+          <div className="grid lg:grid-cols-2 py-8 gap-8 lg:gap-12">
             <div>
-              <div className="h-64 md:h-auto bg-emerald-100 overflow-hidden rounded-lg shadow-lg">
-                <img
-                  src="https://images.unsplash.com/photo-1542340916-951bb72c8f74?auto=format&q=75&fit=crop&w=600&h=450"
-                  loading="lazy"
+              <div className="h-64 md:h-auto bg-emerald-100 overflow-hidden">
+                <Image
+                  src={About1}
+                  priority
+                  
                   alt="Photo by Martin Sanchez"
-                  className="w-full h-full object-cover object-center"
+                  className="w-full h-full rounded-lg shadow-lg object-cover object-center"
                 />
               </div>
             </div>
@@ -95,7 +99,7 @@ const About = () => {
               </p>
             </div>
           </div>
-          <div className="grid md:grid-cols-2 py-8 gap-8 lg:gap-12">
+          <div className="grid lg:grid-cols-2 py-8 gap-8 lg:gap-12">
             <div className="md:pt-8">
               <h1 className="text-emerald-800 text-2xl sm:text-3xl font-bold text-center md:text-left mb-4 md:mb-6">
                 {contents[1].name}
@@ -106,12 +110,13 @@ const About = () => {
               </p>
             </div>
             <div>
-              <div className="h-64 md:h-auto bg-emerald-100 overflow-hidden rounded-lg shadow-lg">
-                <img
-                  src="https://images.unsplash.com/photo-1610465299996-30f240ac2b1c?auto=format&q=75&fit=crop&w=600&h=450"
-                  loading="lazy"
+              <div className="h-64 md:h-auto bg-emerald-100 overflow-hidden">
+                <Image
+                  src={About2}
+                  priority
+                  
                   alt="Photo by Martin Sanchez"
-                  className="w-full h-full object-cover object-center"
+                  className="w-full h-full rounded-lg shadow-lg object-cover object-center"
                 />
               </div>
             </div>
