@@ -60,7 +60,7 @@ const ChangePassword = () => {
 
       let bytes = CryptoJS.AES.decrypt(
         data.password,
-        "fTjWnZr4u7x!A%D*G-KaPdSgVkXp2s5v"
+        process.env.CRYPTO_SECRET_KEY
       );
       let decryptedPass = bytes.toString(CryptoJS.enc.Utf8);
 

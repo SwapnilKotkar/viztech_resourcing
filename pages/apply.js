@@ -7,13 +7,13 @@ const Apply = () => {
   const REGION =process.env.AWS_BUCKET_REGION;
 
   AWS.config.update({
-    accessKeyId: "AKIA4APBYPV52CNETL6C",
-    secretAccessKey: "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"
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
   })
 
   const myBucket = new AWS.S3({
-    params: { Bucket: "viztech-resumes"},
-    region: "ap-south-1",
+    params: { Bucket: S3_BUCKET},
+    region: REGION,
 })
 
 const handleFileInput = (e) => {
