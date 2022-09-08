@@ -80,6 +80,7 @@ const ViewResumes = () => {
     async function fetchResume() {
       const resuemResponse = await fetch("/api/resumes");
       const resumeData = await resuemResponse.json();
+      console.log('resume is', resumeData)
       setResumesList(resumeData);
     }
     fetchResume();

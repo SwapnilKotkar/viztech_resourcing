@@ -34,16 +34,16 @@ async function getResumes(req,res){
 }
 
 async function postResume(req,res){
-    const { uniqueID, fullName, email, joinFrom, resumeTitle, resumeURL, applyFor, comments } = req.body
+    const { uniqueID, fullName, email, joinFrom, resumeURL, applyFor, comments } = req.body
 
-    if(!fullName|| !email || !resumeTitle || !resumeURL || !applyFor ) {
+    if(!fullName|| !email || !applyFor || !resumeURL ) {
         return res.status(422).json({ error: "please fill the data properly !"});
     }
 
     try{
         let { db } = await connectToDatabase();
 
-        const resume = await db.collection('resumes').insertOne({ uniqueID, fullName, email, joinFrom, resumeTitle, resumeURL, applyFor, comments });
+        const resume = await db.collection('resumes').insertOne({ uniqueID, fullName, email, joinFrom, resumeURL, applyFor, comments });
 
         if(resume){
         res.status(200).json({message : "Resume submitted successfully !"})

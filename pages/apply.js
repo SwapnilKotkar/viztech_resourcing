@@ -1,20 +1,34 @@
 import React, { useState, useEffect } from "react";
 import toast from "react-hot-toast";
+import AWS from 'aws-sdk'
 
 const Apply = () => {
-  const apikey = "AUgEpoFGpRQa0SUvJ34woz";
-  const client = require("filestack-js").init(apikey);
+  const S3_BUCKET = process.env.AWS_BUCKET_NAME;
+  const REGION =process.env.AWS_BUCKET_REGION;
+
+  AWS.config.update({
+    accessKeyId: "AKIA4APBYPV52CNETL6C",
+    secretAccessKey: "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"
+  })
+
+  const myBucket = new AWS.S3({
+    params: { Bucket: "viztech-resumes"},
+    region: "ap-south-1",
+})
+
+const handleFileInput = (e) => {
+  setSelectedFile(e.target.files[0]);
+}
 
   const uniqueID = new Date().getTime()
 
   const date = new Date().toISOString().slice(0, 10);
 
-  const [file, setFile] = useState(false);
+  const [fileStatus, setFileStatus] = useState(false);
   const [formData, setFormData] = useState({
     fullName: "", 
     email: "",
     joinFrom: date,
-    resumeTitle: "",
     resumeURL: "",
     applyFor: "",
     comments: "No comments",
@@ -24,23 +38,32 @@ const Apply = () => {
     toast.loading('Uploading file...')
 
     const file = event.target.files[0];
-    await client.upload(file).then(
-      function (result) {
-        setFormData({
-          ...formData,
-          resumeTitle: result._file.name,
-          resumeURL: result.url,
-        });
-      },
-      function (error) {
-        console.log(error);
-      }
-    );
+    const fileKey = (uniqueID + "-" + file.name).replace(' ', '-')
+    setFormData({...formData, resumeURL: "https://viztech-resumes.s3-ap-south-1.amazonaws.com/" + fileKey})
 
-    if (client) {
+    const params = {
+      ACL: 'public-read',
+      Body: file,
+      Bucket: "viztech-resumes",
+      Key: fileKey
+  };
+
+    try {
+      myBucket.putObject(params)
+      .on('httpUploadProgress', (evt) => {
+          setProgress(Math.round((evt.loaded / evt.total) * 100))
+      })
+      .send((err) => {
+          if (err) console.log(err)
+      })
+
       toast.remove()
       toast.success('File Uploaded')
-      setFile(true);
+      setFileStatus(true);
+
+    } catch (error) {
+      toast.remove()
+      toast.error('File Upload failed')
     }
   };
 
@@ -57,9 +80,8 @@ const Apply = () => {
       fullName,
       email,
       joinFrom,
-      resumeTitle,
-      resumeURL,
       applyFor,
+      resumeURL,
       comments,
     } = formData;
 
@@ -73,7 +95,6 @@ const Apply = () => {
         fullName,
         email,
         joinFrom,
-        resumeTitle,
         resumeURL,
         applyFor,
         comments,
@@ -89,12 +110,13 @@ const Apply = () => {
     } else {
       toast.remove()
       toast.error("Upload failed");
+      setFileStatus(false);
     }
 
     setFormData({
       fullName: "",
       email: "",
-      joinFrom: "",
+      joinFrom: date,
       resumeTitle: "",
       resumeURL: "",
       applyFor: "",
@@ -192,21 +214,6 @@ const Apply = () => {
                     required
                   />
                 </div>
-                {/* <div>
-                  <label className="text-sm font-medium text-gray-600" htmlFor="qualification">
-                    Qualification*
-                  </label>
-                  <input
-                    className="w-full p-3 text-sm border-gray-200 rounded-lg"
-                    placeholder=""
-                    type="text"
-                    id="qualification"
-                    name="qual"
-                    value={formData.qual}
-                    onChange={handleChange}
-                    required
-                  />
-                </div> */}
               </div>
               <div>
                 <label className="text-sm font-medium text-gray-600" htmlFor="name">
@@ -223,7 +230,7 @@ const Apply = () => {
                 />
               </div>
                 <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
-                  {file && (
+                  {fileStatus && (
                     <div className="space-y-1 text-center">
                       <div className="flex text-sm justify-center text-gray-600">
                         <span className="relative bg-white rounded-md font-medium text-green-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
@@ -234,7 +241,7 @@ const Apply = () => {
                       </div>
                     </div>
                   )}
-                  {!file && (
+                  {!fileStatus && (
                     <div className="space-y-1 text-center">
                       <svg
                         className="mx-auto h-12 w-12 text-gray-400"
