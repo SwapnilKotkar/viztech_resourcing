@@ -18,10 +18,10 @@ const Apply = () => {
   });
 
   const config = {
-    bucketName: process.env.AWS_BUCKET_NAME,
-    region: process.env.AWS_BUCKET_REGION,
-    accessKeyId: process.env.AWS_ACCESS_KEY_NAME,
-    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY_NAME,
+    bucketName: process.env.MY_AWS_BUCKET_NAME,
+    region: process.env.MY_AWS_BUCKET_REGION,
+    accessKeyId: process.env.MY_AWS_ACCESS_KEY_NAME,
+    secretAccessKey: process.env.MY_AWS_SECRET_ACCESS_KEY_NAME,
 }
 
   const handleFileChange = async (event) => {
