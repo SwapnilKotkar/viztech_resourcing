@@ -115,12 +115,12 @@ const Apply = () => {
             </p>
 
             <div className="mt-8">
-              <a href="" className="text-2xl font-bold text-pink-600">
-                0151 475 4450
-              </a>
+              <i className="text-2xl font-semibold text-gray-500">
+              To <span className="text-blue-700">succeed</span> in your mission, you must have single-minded devotion to your <span className="text-green-500">goal</span>.
+              </i>
 
-              <address className="mt-2 not-italic">
-                282 Lorem ipsum, dolor sit amet, CA 58517
+              <address className="mt-2 not-italic font-bold text-right">
+                ~ APJ Abdul Kalam
               </address>
             </div>
           </div>
