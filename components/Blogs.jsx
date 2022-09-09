@@ -5,17 +5,17 @@ const Blogs = () => {
 
     const blogsData = [
         {
-            image: '/static/images/blog-one.jpg',
+            image: '/blog-one.jpg',
             date: "July 19, 2021",
             heading: "New trends in Tech",
         },
         {
-            image: '/static/images/blog-two.jpg',
+            image: '/blog-two.jpg',
             date: "April 07, 2021",
             heading: "Working with legacy stacks",
         },
         {
-            image: '/static/images/blog-three.jpg',
+            image: '/blog-three.jpg',
             date: "March 15, 2021",
             heading: "10 best smartphones for devs",
         }

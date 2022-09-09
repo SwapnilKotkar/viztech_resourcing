@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
-import Hero1 from '../public/static/images/hero-one.jpg'
-import Hero2 from '../public/static/images/hero-two.jpg'
+import Hero1 from '../public/hero-one.jpg'
+import Hero2 from '../public/hero-two.jpg'
 
 const Hero = () => {
   return (

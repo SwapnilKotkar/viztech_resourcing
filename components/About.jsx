@@ -1,7 +1,7 @@
 import React from "react";
 import Image from 'next/image'
-import About1 from '../public/static/images/about-one.jpg'
-import About2 from '../public/static/images/about-two.jpg'
+import About1 from '../public/about-one.jpg'
+import About2 from '../public/about-two.jpg'
 
 import {
   BoltIcon,
