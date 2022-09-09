@@ -1,25 +1,8 @@
 import React, { useState, useEffect } from "react";
 import toast from "react-hot-toast";
-import AWS from 'aws-sdk'
+import S3 from 'react-aws-s3';
 
 const Apply = () => {
-  const S3_BUCKET = process.env.AWS_BUCKET_NAME;
-  const REGION =process.env.AWS_BUCKET_REGION;
-
-  AWS.config.update({
-    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
-  })
-
-  const myBucket = new AWS.S3({
-    params: { Bucket: S3_BUCKET},
-    region: REGION,
-})
-
-const handleFileInput = (e) => {
-  setSelectedFile(e.target.files[0]);
-}
-
   const uniqueID = new Date().getTime()
 
   const date = new Date().toISOString().slice(0, 10);
@@ -34,36 +17,33 @@ const handleFileInput = (e) => {
     comments: "No comments",
   });
 
+  const config = {
+    bucketName: process.env.AWS_BUCKET_NAME,
+    region: process.env.AWS_BUCKET_REGION,
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+}
+
   const handleFileChange = async (event) => {
     toast.loading('Uploading file...')
 
     const file = event.target.files[0];
-    const fileKey = (uniqueID + "-" + file.name).replace(' ', '-')
-    setFormData({...formData, resumeURL: "https://viztech-resumes.s3-ap-south-1.amazonaws.com/" + fileKey})
-
-    const params = {
-      ACL: 'public-read',
-      Body: file,
-      Bucket: "viztech-resumes",
-      Key: fileKey
-  };
+    const fileKey = (uniqueID + "-" + file.name)
 
     try {
-      myBucket.putObject(params)
-      .on('httpUploadProgress', (evt) => {
-          setProgress(Math.round((evt.loaded / evt.total) * 100))
-      })
-      .send((err) => {
-          if (err) console.log(err)
-      })
-
+      
+      const ReactS3Client = new S3(config);
+      const fileUpload = await ReactS3Client.uploadFile(file, fileKey)
+      setFormData({...formData, resumeURL: fileUpload.location})
       toast.remove()
       toast.success('File Uploaded')
       setFileStatus(true);
 
     } catch (error) {
+
       toast.remove()
       toast.error('File Upload failed')
+      console.error(error)
     }
   };
 
