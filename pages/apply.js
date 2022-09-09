@@ -28,7 +28,7 @@ const Apply = () => {
     toast.loading('Uploading file...')
 
     const file = event.target.files[0];
-    const fileKey = (uniqueID + "-" + file.name)
+    const fileKey = (uniqueID + file.name)
 
     try {
       
