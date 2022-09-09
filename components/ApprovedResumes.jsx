@@ -43,7 +43,7 @@ const ApprovedResumes = () => {
           <div className="py-4 lg:pt-4 lg:col-span-2">
             <div className="flex justify-center">
               <a href="" className="text-2xl font-bold text-emerald-900">
-                Resumes
+                Approved Resumes
               </a>
             </div>
           </div>
