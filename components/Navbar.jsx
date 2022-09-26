@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import NavLogo from "./NavLogo";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useLoginContext } from "../context/LoginContext";
 
@@ -34,11 +35,12 @@ const Navbar = () => {
           <div className="flex justify-start lg:w-0 lg:flex-1">
             <a href="#">
               <span className="sr-only">Viztech Logo</span>
-              <img
+              {/* <img
                 className="w-32 sm:w-60"
                 src="/viztech-horizontal-logo.svg"
                 alt="viztech logo"
-              />
+              /> */}
+              <span><NavLogo color={'#065f46'} width={200}/></span>
             </a>
           </div>
           <div className="-mr-2 -my-2 md:hidden">

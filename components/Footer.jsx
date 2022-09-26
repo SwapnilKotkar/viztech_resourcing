@@ -1,5 +1,6 @@
 import React from "react";
 import Link from 'next/link'
+import FooterLogo from "./FooterLogo";
 
 const Footer = () => {
   return (
@@ -17,11 +18,12 @@ const Footer = () => {
 
             Viztech resourcing
           </a> */}
-          <img
+          {/* <img
                 className="h-20 w-auto sm:h-24 bg-gray-100 rounded p-2"
                 src="/viztech-vertical-logo.svg"
                 alt="viztech logo"
-              />
+              /> */}
+              <span className="rounded"><FooterLogo bgColor={'#B9E9C9'} color={'#065f46'} width={250}/></span>
         </div>
 
         <p className="text-gray-100 font-medium sm:pr-8 mb-6">You Make The Hire. We Make It Simple.</p>
