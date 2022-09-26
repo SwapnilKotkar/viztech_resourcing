@@ -5,7 +5,7 @@ const NavLogo = ({color, width, height, bgColor}) => {
     <>
       <svg
         width={width || "200"}
-        height={height || " "}
+        height={height || ""}
         viewBox="0 0 1860 551"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
