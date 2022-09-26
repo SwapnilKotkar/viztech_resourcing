@@ -40,7 +40,7 @@ const Navbar = () => {
                 src="/viztech-horizontal-logo.svg"
                 alt="viztech logo"
               /> */}
-              <span><NavLogo color={'#065f46'} width={200}/></span>
+              <span><NavLogo color={'#065f46'} width={150}/></span>
             </a>
           </div>
           <div className="-mr-2 -my-2 md:hidden">
