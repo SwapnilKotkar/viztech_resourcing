@@ -266,7 +266,7 @@ const Apply = () => {
               <div className="mt-4">
                 <button
                   type="submit"
-                  className="inline-flex items-center justify-center w-full px-5 py-3 text-white border bg-emerald-900 border-emerald-900 rounded hover:bg-transparent hover:text-emerald-600 active:text-emerald-500 rounded sm:w-auto"
+                  className="inline-flex items-center justify-center w-full px-5 py-3 text-white border bg-emerald-900 border-emerald-900 rounded hover:bg-transparent hover:text-emerald-600 active:text-emerald-500 sm:w-auto"
                 >
                   <span className="font-medium"> Submit resume </span>
 
