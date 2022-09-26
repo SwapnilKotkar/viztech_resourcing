@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useLoginContext } from "../context/LoginContext";
 
@@ -34,9 +35,9 @@ const Navbar = () => {
             <a href="#">
               <span className="sr-only">Viztech Logo</span>
               <img
-                className="h-8 w-auto sm:h-10"
-                src="https://tailwindui.com/img/logos/workflow-mark.svg?color=emerald&shade=900"
-                alt=""
+                className="w-32 sm:w-60"
+                src="/viztech-horizontal-logo.svg"
+                alt="viztech logo"
               />
             </a>
           </div>

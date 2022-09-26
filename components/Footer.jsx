@@ -10,13 +10,18 @@ const Footer = () => {
     <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-12 lg:gap-8 pt-10 lg:pt-12 mb-16">
       <div className="col-span-full lg:col-span-2">
         <div className="lg:-mt-2 mb-4">
-          <a href="" className="inline-flex items-center text-yellow-100 text-xl md:text-2xl font-bold gap-2" aria-label="logo">
+          {/* <a href="" className="inline-flex items-center text-yellow-100 text-xl md:text-2xl font-bold gap-2" aria-label="logo">
             <svg width="95" height="94" viewBox="0 0 95 94" className="w-5 h-auto text-green-300" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
               <path d="M96 0V47L48 94H0V47L48 0H96Z" />
             </svg>
 
             Viztech resourcing
-          </a>
+          </a> */}
+          <img
+                className="h-20 w-auto sm:h-24 bg-gray-100 rounded p-2"
+                src="/Viztech-vertical-logo.svg"
+                alt="viztech logo"
+              />
         </div>
 
         <p className="text-gray-100 font-medium sm:pr-8 mb-6">You Make The Hire. We Make It Simple.</p>
@@ -143,7 +148,7 @@ const Footer = () => {
     
     </div>
 
-    <div className="text-green-400 text-lg font-medium text-center border-t border-green-800 py-8">© Vzitech resourcing. All rights reserved.</div>
+    <div className="text-green-400 text-lg font-medium text-center border-t border-green-800 py-8">© Viztech resourcing. All rights reserved.</div>
   </footer>
 </div>
 </div>
