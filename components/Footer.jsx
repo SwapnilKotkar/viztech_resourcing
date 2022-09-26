@@ -19,7 +19,7 @@ const Footer = () => {
           </a> */}
           <img
                 className="h-20 w-auto sm:h-24 bg-gray-100 rounded p-2"
-                src="/Viztech-vertical-logo.svg"
+                src="/viztech-vertical-logo.svg"
                 alt="viztech logo"
               />
         </div>
