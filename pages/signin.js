@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import toast from 'react-hot-toast';
+import { useRouter } from "next/router";
 import { AtSymbolIcon, EyeIcon, EyeSlashIcon } from "@heroicons/react/24/outline";
 
 const Signin = () => {
+  const router = useRouter();
   const [showPass, setShowPass] = useState(false);
   const [login, setLogin] = useState({
     email: "",
@@ -37,8 +39,8 @@ const Signin = () => {
       toast.success("Login Success!");
 
       localStorage.setItem('signin_token', data.token) 
-      setInterval(() => {
-      window.location.replace('/admin')
+      setTimeout(() => {
+      router.push('/admin')
       }, 500);
 
     }else{
@@ -53,7 +55,7 @@ const Signin = () => {
 
   useEffect( ()=>{
     if(localStorage.getItem('signin_token')){
-      window.location.replace('/admin')
+      router.push('/admin')
     }
 },[])
 

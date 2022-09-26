@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { useRouter } from "next/router";
 import toast from "react-hot-toast";
 import S3 from 'react-aws-s3';
 
@@ -7,6 +8,7 @@ const Apply = () => {
 
   const date = new Date().toISOString().slice(0, 10);
 
+  const router = useRouter();
   const [fileStatus, setFileStatus] = useState(false);
   const [formData, setFormData] = useState({
     fullName: "", 
@@ -84,8 +86,8 @@ const Apply = () => {
     if (res.status === 200) {
       toast.remove()
       toast.success("Resume Submitted");
-      setInterval(() => {
-        window.location.replace("/");
+      setTimeout(() => {
+        router.push("/");
       }, 500);
     } else {
       toast.remove()
