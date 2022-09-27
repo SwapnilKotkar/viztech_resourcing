@@ -8,16 +8,20 @@ const Blogs = () => {
             image: '/blog-one.jpg',
             date: "July 19, 2021",
             heading: "New trends in Tech",
+            alt: "New trends in Tech"
         },
         {
             image: '/blog-two.jpg',
             date: "April 07, 2021",
             heading: "Working with legacy stacks",
+            alt: "Working with legacy stacks"
+
         },
         {
             image: '/blog-three.jpg',
             date: "March 15, 2021",
             heading: "10 best smartphones for devs",
+            alt: "10 best smartphones for devs"
         }
     ]
 
@@ -35,7 +39,7 @@ const Blogs = () => {
 
     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 xl:gap-8">
     {blogsData.map((blog)=> (
-        <a key={blog.heading} className="group h-48 md:h-64 xl:h-96 flex flex-col bg-green-100 rounded-lg shadow-lg overflow-hidden relative">
+        <a href='#' key={blog.heading} className="group h-48 md:h-64 xl:h-96 flex flex-col bg-green-100 rounded-lg shadow-lg overflow-hidden relative">
         <Image src={blog?.image} priority layout='fill' className="w-full h-full object-cover object-center absolute inset-0 group-hover:scale-110 transition duration-200" alt='blog images' />
 
         <div className="bg-gradient-to-t from-green-800 md:via-transparent to-transparent absolute inset-0 pointer-events-none"></div>

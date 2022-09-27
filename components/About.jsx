@@ -83,7 +83,6 @@ const About = () => {
                 <Image
                   src={About1}
                   priority
-                  
                   alt="Photo by Martin Sanchez"
                   className="w-full h-full rounded-lg shadow-lg object-cover object-center"
                 />
@@ -114,7 +113,6 @@ const About = () => {
                 <Image
                   src={About2}
                   priority
-                  
                   alt="Photo by Martin Sanchez"
                   className="w-full h-full rounded-lg shadow-lg object-cover object-center"
                 />
