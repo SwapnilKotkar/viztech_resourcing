@@ -7,7 +7,19 @@ const Layout = ({children}) => {
   return (
     <>
         <Head>
-        <title>Viztech resourcing</title>
+          <title>Viztech Resourcing</title>
+          <meta charset="utf-8"/>
+          <meta name="theme-color" content="#ffffff"/>
+          <meta name="description" content="Viztech Resourcing is a candidate hiring platform. A Place That Helps You To Reach Your Destiny" />
+          <meta property='og:title' content='Viztech Resourcing' />
+          <meta property='og:description' content="Viztech Resourcing is a candidate hiring platform. A Place That Helps You To Reach Your Destiny" />
+          <meta name="keywords" content="Employee, Job, Candidate, Hiring, HR, Recruitment, Company, IT Company" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"/>
+          <link rel="shortcut icon" href="/Viztech_favicon-16x16.png" sizes='any' type="image/x-icon" />
+          <link rel="apple-touch-icon" href="/Viztech_favicon-64x64.png" sizes='180x180' type="image/x-icon" />
+          <link rel="apple-touch-icon" href="/Viztech_favicon-32x32.png" sizes='167x167' type="image/x-icon" />
+          <link rel="apple-touch-icon" href="/Viztech_favicon-16x16.png" sizes='152x152' type="image/x-icon" />
+          <link rel="mask-icon" href="/Viztech_favicon-32x32.png" type="image/x-icon" />
       </Head>
       <header>
         <Navbar/>
