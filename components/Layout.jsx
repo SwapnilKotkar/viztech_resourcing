@@ -6,9 +6,10 @@ import Footer from './Footer'
 const Layout = ({children}) => {
   return (
     <>
+        <html lang="en">
         <Head>
           <title>Viztech Resourcing | A Hiring Platform</title>
-          <meta charset="utf-8"/>
+          <meta charset="UTF-8"/>
           <meta name="theme-color" content="#ffffff"/>
           <meta name="description" content="Viztech Resourcing is a candidate hiring platform. A Place That Helps You To Reach Your Destiny. We do recruitment right here. We link you to the right people." />
           <meta property='og:title' content='Viztech Resourcing | A Hiring Platform' />
@@ -22,15 +23,18 @@ const Layout = ({children}) => {
           <link rel="apple-touch-icon" href="/Viztech_favicon-16x16.png" sizes='152x152' type="image/x-icon" />
           <link rel="mask-icon" href="/Viztech_favicon-32x32.png" type="image/x-icon" color='#000000' />
       </Head>
-      <header>
-        <Navbar/>
-      </header>
-      <main>
-        {children}
-      </main>
-      <footer>
-        <Footer/>
-      </footer>
+        <body>
+          <header>
+            <Navbar/>
+          </header>
+          <main>
+            {children}
+          </main>
+          <footer>
+            <Footer/>
+          </footer>
+        </body>
+      </html>
     </>
   )
 }
