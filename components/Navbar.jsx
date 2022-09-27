@@ -102,11 +102,7 @@ const Navbar = () => {
           <div className="pt-5 pb-6 px-5">
             <div className="flex items-center justify-between">
               <div>
-                <img
-                  className="h-8 w-auto"
-                  src="https://tailwindui.com/img/logos/workflow-mark.svg?color=emerald&shade=900"
-                  alt="Workflow"
-                />
+                <span><NavLogo color={'#065f46'} width={150}/></span>
               </div>
               <div className="-mr-2">
                 <div

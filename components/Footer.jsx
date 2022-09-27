@@ -23,7 +23,7 @@ const Footer = () => {
                 src="/viztech-vertical-logo.svg"
                 alt="viztech logo"
               /> */}
-              <span className="rounded"><FooterLogo bgColor={'#B9E9C9'} color={'#065f46'} width={200}/></span>
+              <span className="rounded"><FooterLogo bgColor={'#B9E9C9'} color={'#064E3B'} width={200}/></span>
         </div>
 
         <p className="text-gray-100 font-medium sm:pr-8 mb-6">You Make The Hire. We Make It Simple.</p>
