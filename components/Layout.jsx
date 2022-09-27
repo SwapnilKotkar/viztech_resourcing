@@ -7,11 +7,11 @@ const Layout = ({children}) => {
   return (
     <>
         <Head>
-          <title>Viztech Resourcing</title>
+          <title>Viztech Resourcing | A Hiring Platform</title>
           <meta charset="utf-8"/>
           <meta name="theme-color" content="#ffffff"/>
-          <meta name="description" content="Viztech Resourcing is a candidate hiring platform. A Place That Helps You To Reach Your Destiny" />
-          <meta property='og:title' content='Viztech Resourcing' />
+          <meta name="description" content="Viztech Resourcing is a candidate hiring platform. A Place That Helps You To Reach Your Destiny. We do recruitment right here. We link you to the right people." />
+          <meta property='og:title' content='Viztech Resourcing | A Hiring Platform' />
           <meta property='og:description' content="Viztech Resourcing is a candidate hiring platform. A Place That Helps You To Reach Your Destiny" />
           <meta name="keywords" content="Employee, Job, Candidate, Hiring, HR, Recruitment, Company, IT Company" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"/>
