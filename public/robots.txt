@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /signin
+Allow: /apply
+DisAllow: /admin
