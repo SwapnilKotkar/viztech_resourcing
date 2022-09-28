@@ -35,11 +35,6 @@ const Navbar = () => {
           <div className="flex justify-start lg:w-0 lg:flex-1">
             <a href="#">
               <span className="sr-only">Viztech Logo</span>
-              {/* <img
-                className="w-32 sm:w-60"
-                src="/viztech-horizontal-logo.svg"
-                alt="viztech logo"
-              /> */}
               <span><NavLogo color={'#065f46'} width={150}/></span>
             </a>
           </div>
