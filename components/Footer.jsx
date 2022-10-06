@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="py-12 bg-emerald-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <footer className="max-w-screen-2xl px-4 md:px-0 mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-2 gap-12 lg:gap-8 lg:mt-12 mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-8 lg:mt-12 mb-16">
               <div>
                 <div className="lg:-mt-2 mb-4">
                   <span className="rounded">
@@ -26,7 +26,7 @@ const Footer = () => {
               </div>
 
               <div className="flex justify-between">
-              <div>
+              <div className="flex-1 lg:flex-none">
                 <div className="text-amber-200 font-bold tracking-widest uppercase mb-4">
                   Menu
                 </div>
@@ -58,7 +58,7 @@ const Footer = () => {
                 </nav>
               </div>
 
-              <div>
+              <div className="flex-1 lg:flex-none">
                 <div className="text-amber-200 font-bold tracking-widest uppercase mb-4">
                   Address
                 </div>
