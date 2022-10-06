@@ -91,7 +91,7 @@ const Footer = () => {
             </div>
 
             <div className="text-green-400 text-lg font-medium text-center border-t border-green-800 py-8">
-              © Viztech resourcing. All rights reserved.
+              © Viztech Systems. All rights reserved.
             </div>
           </footer>
         </div>

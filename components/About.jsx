@@ -89,22 +89,22 @@ const About = () => {
               </div>
             </div>
             <div className="md:pt-8">
-              <h1 className="text-emerald-800 text-2xl sm:text-3xl font-bold text-center md:text-left mb-4 md:mb-6">
+              <h1 className="text-emerald-800 text-2xl sm:text-3xl font-bold text-left md:text-left mb-4 md:mb-6">
                 {contents[0].name}
               </h1>
 
-              <p className="text-gray-500 sm:text-lg mb-6 md:mb-8">
+              <p className="text-gray-500 sm:text-lg text-justify mb-6 md:mb-8">
                 {contents[0].description}
               </p>
             </div>
           </div>
           <div className="grid lg:grid-cols-2 py-8 gap-8 lg:gap-12">
             <div className="md:pt-8">
-              <h1 className="text-emerald-800 text-2xl sm:text-3xl font-bold text-center md:text-left mb-4 md:mb-6">
+              <h1 className="text-emerald-800 text-2xl sm:text-3xl font-bold text-left md:text-left mb-4 md:mb-6">
                 {contents[1].name}
               </h1>
 
-              <p className="text-gray-500 sm:text-lg mb-6 md:mb-8">
+              <p className="text-gray-500 sm:text-lg text-justify mb-6 md:mb-8">
                 {contents[1].description}
               </p>
             </div>
