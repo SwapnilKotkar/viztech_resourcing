@@ -33,9 +33,9 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex justify-between items-center border-emerald-100 py-6 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
-            <a href="#">
+            <a href="#" >
               <span className="sr-only">Viztech Logo</span>
-              <span><NavLogo color={'#065f46'} width={150}/></span>
+              <span><NavLogo color={'#065f46'}  height={30} /></span>
             </a>
           </div>
           <div className="-mr-2 -my-2 md:hidden">
@@ -97,7 +97,7 @@ const Navbar = () => {
           <div className="pt-5 pb-6 px-5">
             <div className="flex items-center justify-between">
               <div>
-                <span><NavLogo color={'#065f46'} width={150}/></span>
+                <span><NavLogo color={'#065f46'} height={30}/></span>
               </div>
               <div className="-mr-2">
                 <div
